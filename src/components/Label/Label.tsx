@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import { Wrapper } from "./Label.style";
 
 type Props = {
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 const Label = (props: Props) => {

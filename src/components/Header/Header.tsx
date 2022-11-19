@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import { Wrapper } from "./Header.style";
 
 type Props = {
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 const Header = (props: Props) => {

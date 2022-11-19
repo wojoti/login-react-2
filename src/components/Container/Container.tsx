@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import { Wrapper } from "./Container.style";
 
 type Props = {
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 const Container = (props: Props) => {

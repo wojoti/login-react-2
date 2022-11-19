@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import { Wrapper } from "./Box.style";
 type Props = {
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 const Box = (props: Props) => {
