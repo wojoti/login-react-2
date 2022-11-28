@@ -1,17 +1,17 @@
-import React from "react";
-import { StyledIcon } from "./Icon.style";
+import React from 'react'
+import { StyledIcon } from './Icon.style'
 export enum IconType {
-  facebook = "./img/facebook.svg",
-  linkedin = "./img/linkedin.svg",
-  google = "./img/google.svg",
+  facebook = './img/facebook.svg',
+  linkedin = './img/linkedin.svg',
+  google = './img/google.svg',
 }
 
-type Props = {
-  type: IconType;
-  width: number;
-  height: number;
-  alt: string;
-};
+interface Props {
+  type: IconType
+  width: number
+  height: number
+  alt: string
+}
 
 export const Icon = (props: Props) => {
   return (
@@ -21,5 +21,5 @@ export const Icon = (props: Props) => {
       height={props.height}
       alt={props.alt}
     />
-  );
-};
+  )
+}

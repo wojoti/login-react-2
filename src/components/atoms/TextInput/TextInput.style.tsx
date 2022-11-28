@@ -1,5 +1,5 @@
-import styled from "styled-components";
-type Props = {};
+import styled from 'styled-components'
+interface Props {}
 
 export const StyledTextInput = styled.input<Props>`
   width: 100%;
@@ -7,4 +7,4 @@ export const StyledTextInput = styled.input<Props>`
   border: 2px solid #e5e7eb;
   border-radius: 5px;
   padding-left: 10px;
-`;
+`

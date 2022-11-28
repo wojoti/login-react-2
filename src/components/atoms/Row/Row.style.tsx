@@ -1,16 +1,16 @@
-import styled from "styled-components";
-type Props = {
-  mt?: number;
-  mb?: number;
-  ml?: number;
-  mr?: number;
-  pt?: number;
-  pb?: number;
-  pl?: number;
-  pr?: number;
-  justify?: string;
-  items?: string;
-};
+import styled from 'styled-components'
+interface Props {
+  mt?: number
+  mb?: number
+  ml?: number
+  mr?: number
+  pt?: number
+  pb?: number
+  pl?: number
+  pr?: number
+  justify?: string
+  items?: string
+}
 
 export const Wrapper = styled.div<Props>`
   margin-top: ${(props) => props.mt || 0}px;
@@ -23,6 +23,6 @@ export const Wrapper = styled.div<Props>`
   padding-right: ${(props) => props.pr || 0}px;
   display: flex;
   flex-direction: row;
-  justify-content: ${(props) => props.justify || "start"};
-  align-items: ${(props) => props.items || "start"};
-`;
+  justify-content: ${(props) => props.justify || 'start'};
+  align-items: ${(props) => props.items || 'start'};
+`

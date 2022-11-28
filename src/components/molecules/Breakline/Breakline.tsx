@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react'
 import {
   MaxWidthDiv,
   GreyLineDiv,
   RelativeDiv,
-  StyledText,
-} from "./Breakline.style";
+  StyledText
+} from './Breakline.style'
 
-type Props = {
-  children?: string;
-};
+interface Props {
+  children?: string
+}
 
 const Breakline = (props: Props) => {
   return (
@@ -19,7 +19,7 @@ const Breakline = (props: Props) => {
         </RelativeDiv>
       </GreyLineDiv>
     </MaxWidthDiv>
-  );
-};
+  )
+}
 
-export default Breakline;
+export default Breakline

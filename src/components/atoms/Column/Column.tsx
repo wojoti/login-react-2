@@ -1,19 +1,19 @@
-import React, { ReactNode } from "react";
-import { Wrapper } from "./Column.style";
+import React from 'react'
+import { Wrapper } from './Column.style'
 
-type Props = {
-  children?: ReactNode;
-  mt?: number;
-  mb?: number;
-  ml?: number;
-  mr?: number;
-  pt?: number;
-  pb?: number;
-  pl?: number;
-  pr?: number;
-  justify?: string;
-  items?: string;
-};
+interface Props {
+  children?: React.ReactNode
+  mt?: number
+  mb?: number
+  ml?: number
+  mr?: number
+  pt?: number
+  pb?: number
+  pl?: number
+  pr?: number
+  justify?: string
+  items?: string
+}
 
 const Column = (props: Props) => {
   return (
@@ -31,7 +31,7 @@ const Column = (props: Props) => {
     >
       {props.children}
     </Wrapper>
-  );
-};
+  )
+}
 
-export default Column;
+export default Column

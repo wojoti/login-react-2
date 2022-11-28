@@ -1,12 +1,12 @@
-import React from "react";
-import { StyledCheckbox } from "./Checkbox.style";
+import React from 'react'
+import { StyledCheckbox } from './Checkbox.style'
 
-type Props = {
-  name: string;
-  id: string;
-  value?: string;
-  onChange?: React.ChangeEventHandler<HTMLInputElement>;
-};
+interface Props {
+  name: string
+  id: string
+  value?: string
+  onChange?: React.ChangeEventHandler<HTMLInputElement>
+}
 
 const Checkbox = (props: Props) => {
   return (
@@ -17,7 +17,7 @@ const Checkbox = (props: Props) => {
       value={props.value}
       onChange={props.onChange}
     ></StyledCheckbox>
-  );
-};
+  )
+}
 
-export default Checkbox;
+export default Checkbox

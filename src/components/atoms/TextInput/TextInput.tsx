@@ -1,12 +1,12 @@
-import React from "react";
-import { StyledTextInput } from "./TextInput.style";
+import React from 'react'
+import { StyledTextInput } from './TextInput.style'
 
-type Props = {
-  type: string;
-  name: string;
-  id: string;
-  onFieldChange?: React.ChangeEventHandler<HTMLInputElement>;
-};
+interface Props {
+  type: string
+  name: string
+  id: string
+  onFieldChange?: React.ChangeEventHandler<HTMLInputElement>
+}
 
 const TextInput = (props: Props) => {
   return (
@@ -16,7 +16,7 @@ const TextInput = (props: Props) => {
       id={props.id}
       onChange={props.onFieldChange}
     ></StyledTextInput>
-  );
-};
+  )
+}
 
-export default TextInput;
+export default TextInput

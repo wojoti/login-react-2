@@ -1,12 +1,12 @@
-import React, { ReactNode } from "react";
-import { StyledHeader } from "./Header.style";
+import React from 'react'
+import { StyledHeader } from './Header.style'
 
-type Props = {
-  children?: ReactNode;
-};
+interface Props {
+  children?: React.ReactNode
+}
 
 const Header = (props: Props) => {
-  return <StyledHeader>{props.children}</StyledHeader>;
-};
+  return <StyledHeader>{props.children}</StyledHeader>
+}
 
-export default Header;
+export default Header

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -17,4 +17,4 @@ export const Wrapper = styled.div`
   border-radius: 0.5rem;
   width: 20rem;
   height: 450px;
-`;
+`

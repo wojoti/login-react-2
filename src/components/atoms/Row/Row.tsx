@@ -1,19 +1,19 @@
-import React, { ReactNode } from "react";
-import { Wrapper } from "./Row.style";
+import React from 'react'
+import { Wrapper } from './Row.style'
 
-type Props = {
-  children?: ReactNode;
-  mt?: number;
-  mb?: number;
-  ml?: number;
-  mr?: number;
-  pt?: number;
-  pb?: number;
-  pl?: number;
-  pr?: number;
-  justify?: string;
-  items?: string;
-};
+interface Props {
+  children?: React.ReactNode
+  mt?: number
+  mb?: number
+  ml?: number
+  mr?: number
+  pt?: number
+  pb?: number
+  pl?: number
+  pr?: number
+  justify?: string
+  items?: string
+}
 
 const Section = (props: Props) => {
   return (
@@ -31,7 +31,7 @@ const Section = (props: Props) => {
     >
       {props.children}
     </Wrapper>
-  );
-};
+  )
+}
 
-export default Section;
+export default Section

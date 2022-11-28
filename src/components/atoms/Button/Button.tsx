@@ -1,12 +1,12 @@
-import React from "react";
-import { StyledButton } from "./Button.style";
+import React from 'react'
+import { StyledButton } from './Button.style'
 
-type Props = {
-  name: string;
-  id: string;
-  children?: string;
-  onClick?: React.MouseEventHandler<HTMLInputElement>;
-};
+interface Props {
+  name: string
+  id: string
+  children?: string
+  onClick?: React.MouseEventHandler<HTMLInputElement>
+}
 
 const Button = (props: Props) => {
   return (
@@ -17,7 +17,7 @@ const Button = (props: Props) => {
       value={props.children}
       onClick={props.onClick}
     />
-  );
-};
+  )
+}
 
-export default Button;
+export default Button
