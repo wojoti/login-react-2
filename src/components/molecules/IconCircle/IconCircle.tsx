@@ -1,10 +1,10 @@
 import React, { ReactNode } from "react";
 import { Wrapper } from "./IconCircle.style";
 
-type Props = { children: ReactNode; accent?: string };
+type Props = { children: ReactNode; color?: string };
 
 const IconCircle = (props: Props) => {
-  return <Wrapper accent={props.accent}>{props.children}</Wrapper>;
+  return <Wrapper accent={props.color}>{props.children}</Wrapper>;
 };
 
 export default IconCircle;

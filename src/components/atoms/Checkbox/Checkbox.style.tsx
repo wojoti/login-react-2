@@ -1,5 +1,5 @@
 import styled from "styled-components";
-export const Wrapper = styled.input`
+export const StyledCheckbox = styled.input`
   margin-right: 10px;
   accent-color: #f43f5e;
   width: 1rem;

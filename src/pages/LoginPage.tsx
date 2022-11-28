@@ -1,37 +1,54 @@
-import React, { useState } from "react";
-import Column from "../components/Column/Column";
-import Container from "../components/Container/Container";
-import Header from "../components/Header/Header";
-import TextInput from "../components/TextInput/TextInput";
-import Label from "../components/Label/Label";
-import Row from "../components/Row/Row";
-import Checkbox from "../components/Checkbox/Checkbox";
-import Button from "../components/Button/Button";
-import Link from "../components/Link/Link";
-import Breakline from "../components/Breakline/Breakline";
-import { Icon, IconType } from "../components/Icon/Icon";
-import IconCircle from "../components/IconCircle/IconCircle";
+import React, { ChangeEvent, MouseEventHandler, useState } from "react";
+import Column from "../components/atoms/Column/Column";
+import Container from "../components/atoms/Container/Container";
+import Header from "../components/atoms/Header/Header";
+import TextInput from "../components/atoms/TextInput/TextInput";
+import Label from "../components/atoms/Label/Label";
+import Row from "../components/atoms/Row/Row";
+import Checkbox from "../components/atoms/Checkbox/Checkbox";
+import Button from "../components/atoms/Button/Button";
+import Link from "../components/atoms/Link/Link";
+import Breakline from "../components/molecules/Breakline/Breakline";
+import { Icon, IconType } from "../components/atoms/Icon/Icon";
+import IconCircle from "../components/molecules/IconCircle/IconCircle";
+import { SyntheticEvent } from "react";
 
 type Props = {};
 
 const LoginPage = (props: Props) => {
-  const [state, setState] = useState({
-    email: "",
-    password: "",
-    remember: false,
-  });
+  const [emailState, setEmailState] = useState({ email: "" });
+  const [passwordState, setPasswordState] = useState({ password: "" });
+  const [rememberState, setRememberState] = useState({ remember: false });
 
-  const onFieldChange = (event: any) => {
-    let value = event.target.value;
-    if (event.target.type === "checkbox") {
-      value = event.target.checked;
-    }
-    setState({ ...state, [event.target.id]: value });
+  const onEmailChange = (event: SyntheticEvent<HTMLInputElement>) => {
+    setEmailState({
+      ...emailState,
+      [event.currentTarget.id]: event.currentTarget.value,
+    });
   };
 
-  const onLoginSubmit = (event: any) => {
-    event.preventDefault();
-    const completeAction = { ...state, action: event.target.id };
+  const onPasswordChange = (event: SyntheticEvent<HTMLInputElement>) => {
+    setPasswordState({
+      ...passwordState,
+      [event.currentTarget.id]: event.currentTarget.value,
+    });
+  };
+
+  const onRememberChange = (event: SyntheticEvent<HTMLInputElement>) => {
+    setRememberState({
+      ...rememberState,
+      [event.currentTarget.id]: event.currentTarget.checked,
+    });
+  };
+
+  const onLoginSubmit = (event: SyntheticEvent<HTMLInputElement>) => {
+    //event.preventDefault(); //zbedne jezeli nie uzywam form
+    const completeAction = {
+      ...emailState,
+      ...passwordState,
+      ...rememberState,
+      action: event.currentTarget,
+    };
     console.log(completeAction);
   };
   return (
@@ -43,7 +60,7 @@ const LoginPage = (props: Props) => {
           type="email"
           name="email"
           id="email"
-          onFieldChange={onFieldChange}
+          onFieldChange={onEmailChange}
         ></TextInput>
       </Column>
       <Column mt={15}>
@@ -52,28 +69,24 @@ const LoginPage = (props: Props) => {
           type="password"
           name="password"
           id="password"
-          onFieldChange={onFieldChange}
+          onFieldChange={onPasswordChange}
         ></TextInput>
       </Column>
-      <Row mt={10} items={"center"}>
+      <Row mt={10} items="center">
         <Checkbox
           name="remember"
           id="remember"
-          onFieldChange={onFieldChange}
+          onChange={onRememberChange}
         ></Checkbox>
         <Label>Remember me?</Label>
       </Row>
       <Column mt={15}>
-        <Button
-          id={"login-submit"}
-          name={"login-submit"}
-          onSubmit={onLoginSubmit}
-        >
+        <Button id="login-submit" name="login-submit" onClick={onLoginSubmit}>
           LOGIN
         </Button>
       </Column>
-      <Column items={"flex-end"}>
-        <Link decoration={"none"} goto={"/"} color={"rgb(107 114 128)"}>
+      <Column items="flex-end">
+        <Link decoration="none" href="/" color="rgb(107 114 128)">
           Forgot Password?
         </Link>
       </Column>
@@ -81,19 +94,34 @@ const LoginPage = (props: Props) => {
         <Breakline>OR</Breakline>
       </Column>
       <Row justify="center">
-        <IconCircle accent={"#DE5246"}>
-          <Icon type={IconType.google} w={13} h={13} alt={"google"}></Icon>
+        <IconCircle color="#DE5246">
+          <Icon
+            type={IconType.google}
+            width={13}
+            height={13}
+            alt="google"
+          ></Icon>
         </IconCircle>
-        <IconCircle accent={"#1877f2"}>
-          <Icon type={IconType.facebook} w={13} h={13} alt={"facebook"}></Icon>
+        <IconCircle color="#1877f2">
+          <Icon
+            type={IconType.facebook}
+            width={13}
+            height={13}
+            alt="facebook"
+          ></Icon>
         </IconCircle>
-        <IconCircle accent={"#0077B5"}>
-          <Icon type={IconType.linkedin} w={13} h={13} alt={"linkedin"}></Icon>
+        <IconCircle color="#0077B5">
+          <Icon
+            type={IconType.linkedin}
+            width={13}
+            height={13}
+            alt="linkedin"
+          ></Icon>
         </IconCircle>
       </Row>
       <Row justify="center" mt={28}>
-        <Label color={"rgb(107 114 128)"}>
-          Need an account? <Link goto={"/signup"}>SIGN UP</Link>
+        <Label color="rgb(107 114 128)">
+          Need an account? <Link href="/signup">SIGN UP</Link>
         </Label>
       </Row>
     </Container>

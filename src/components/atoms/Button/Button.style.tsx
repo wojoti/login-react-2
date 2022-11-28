@@ -1,5 +1,5 @@
 import styled from "styled-components";
-export const Wrapper = styled.input`
+export const StyledButton = styled.input`
   width: 100%;
   height: 32px;
   border-radius: 6px;

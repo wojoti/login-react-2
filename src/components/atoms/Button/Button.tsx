@@ -1,22 +1,22 @@
 import React from "react";
-import { Wrapper } from "./Button.style";
+import { StyledButton } from "./Button.style";
 
 type Props = {
-  name?: string;
-  id?: string;
+  name: string;
+  id: string;
   children?: string;
-  onSubmit?: (e: any) => void;
+  onClick?: React.MouseEventHandler<HTMLInputElement>;
 };
 
 const Button = (props: Props) => {
   return (
-    <Wrapper
+    <StyledButton
       type="submit"
       name={props.name}
       id={props.id}
       value={props.children}
-      onClick={props.onSubmit}
-    ></Wrapper>
+      onClick={props.onClick}
+    />
   );
 };
 

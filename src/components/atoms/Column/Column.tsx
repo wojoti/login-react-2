@@ -15,7 +15,7 @@ type Props = {
   items?: string;
 };
 
-const Section = (props: Props) => {
+const Column = (props: Props) => {
   return (
     <Wrapper
       mt={props.mt}
@@ -34,4 +34,4 @@ const Section = (props: Props) => {
   );
 };
 
-export default Section;
+export default Column;

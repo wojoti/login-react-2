@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { Wrapper } from "./Label.style";
+import { StyledLabel } from "./Label.style";
 
 type Props = {
   children?: ReactNode;
@@ -7,7 +7,7 @@ type Props = {
 };
 
 const Label = (props: Props) => {
-  return <Wrapper color={props.color}>{props.children}</Wrapper>;
+  return <StyledLabel color={props.color}>{props.children}</StyledLabel>;
 };
 
 export default Label;

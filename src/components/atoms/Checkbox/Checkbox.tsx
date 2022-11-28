@@ -1,22 +1,22 @@
 import React from "react";
-import { Wrapper } from "./Checkbox.style";
+import { StyledCheckbox } from "./Checkbox.style";
 
 type Props = {
-  name?: string;
-  id?: string;
+  name: string;
+  id: string;
   value?: string;
-  onFieldChange?: (e: any) => void;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
 };
 
 const Checkbox = (props: Props) => {
   return (
-    <Wrapper
+    <StyledCheckbox
       type="checkbox"
       name={props.name}
       id={props.id}
       value={props.value}
-      onChange={props.onFieldChange}
-    ></Wrapper>
+      onChange={props.onChange}
+    ></StyledCheckbox>
   );
 };
 

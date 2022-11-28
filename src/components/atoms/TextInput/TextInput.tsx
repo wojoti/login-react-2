@@ -1,21 +1,21 @@
 import React from "react";
-import { Wrapper } from "./TextInput.style";
+import { StyledTextInput } from "./TextInput.style";
 
 type Props = {
   type: string;
-  name?: string;
-  id?: string;
-  onFieldChange?: (e: any) => void;
+  name: string;
+  id: string;
+  onFieldChange?: React.ChangeEventHandler<HTMLInputElement>;
 };
 
 const TextInput = (props: Props) => {
   return (
-    <Wrapper
+    <StyledTextInput
       type={props.type}
       name={props.name}
       id={props.id}
       onChange={props.onFieldChange}
-    ></Wrapper>
+    ></StyledTextInput>
   );
 };
 

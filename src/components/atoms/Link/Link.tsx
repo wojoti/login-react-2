@@ -1,22 +1,22 @@
 import React, { ReactNode } from "react";
-import { Wrapper } from "./Link.style";
+import { StyledLink } from "./Link.style";
 
 type Props = {
   children?: ReactNode;
   decoration?: string;
-  goto: string;
+  href: string;
   color?: string;
 };
 
 const Link = (props: Props) => {
   return (
-    <Wrapper
+    <StyledLink
       decoration={props.decoration}
-      href={props.goto}
+      href={props.href}
       color={props.color}
     >
       {props.children}
-    </Wrapper>
+    </StyledLink>
   );
 };
 

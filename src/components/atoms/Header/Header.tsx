@@ -1,12 +1,12 @@
 import React, { ReactNode } from "react";
-import { Wrapper } from "./Header.style";
+import { StyledHeader } from "./Header.style";
 
 type Props = {
   children?: ReactNode;
 };
 
 const Header = (props: Props) => {
-  return <Wrapper>{props.children}</Wrapper>;
+  return <StyledHeader>{props.children}</StyledHeader>;
 };
 
 export default Header;
