@@ -11,12 +11,12 @@ interface Props {
 const Checkbox = (props: Props) => {
   return (
     <StyledCheckbox
-      type="checkbox"
+      type='checkbox'
       name={props.name}
       id={props.id}
       value={props.value}
       onChange={props.onChange}
-    ></StyledCheckbox>
+    />
   )
 }
 
