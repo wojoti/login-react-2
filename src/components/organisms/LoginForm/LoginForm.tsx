@@ -8,37 +8,28 @@ import Row from '../../atoms/Row/Row'
 import TextInput from '../../atoms/TextInput/TextInput'
 
 const LoginForm = () => {
-  const [emailState, setEmailState] = useState({ email: '' })
-  const [passwordState, setPasswordState] = useState({ password: '' })
-  const [rememberState, setRememberState] = useState({ remember: false })
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [remember, setRemember] = useState(false)
 
   const onEmailChange = (event: SyntheticEvent<HTMLInputElement>) => {
-    setEmailState({
-      ...emailState,
-      [event.currentTarget.id]: event.currentTarget.value,
-    })
+    setEmail(event.currentTarget.value)
   }
 
   const onPasswordChange = (event: SyntheticEvent<HTMLInputElement>) => {
-    setPasswordState({
-      ...passwordState,
-      [event.currentTarget.id]: event.currentTarget.value,
-    })
+    setPassword(event.currentTarget.value)
   }
 
   const onRememberChange = (event: SyntheticEvent<HTMLInputElement>) => {
-    setRememberState({
-      ...rememberState,
-      [event.currentTarget.id]: event.currentTarget.checked,
-    })
+    setRemember(event.currentTarget.checked)
   }
 
   const onLoginSubmit = (event: SyntheticEvent<HTMLInputElement>) => {
-    // event.preventDefault(); //zbedne jezeli nie uzywam form
+    // event.preventDefault(); //dont use preventDefault when not using form
     const completeAction = {
-      ...emailState,
-      ...passwordState,
-      ...rememberState,
+      email,
+      password,
+      remember,
       action: event.currentTarget,
     }
     console.log(completeAction)
