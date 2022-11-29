@@ -1,7 +1,6 @@
 import styled from 'styled-components'
-interface Props {}
 
-export const StyledTextInput = styled.input<Props>`
+export const StyledTextInput = styled.input`
   width: 100%;
   height: 32px;
   border: 2px solid #e5e7eb;

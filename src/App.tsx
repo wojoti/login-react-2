@@ -1,22 +1,20 @@
-import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { Wrapper } from './App.style'
 import LoginPage from './pages/LoginPage'
 import SignupPage from './pages/SignupPage'
-import { Wrapper } from './App.style'
 
-interface Props {}
 const Router = createBrowserRouter([
   {
     path: '/',
-    element: <LoginPage />
+    element: <LoginPage />,
   },
   {
     path: 'signup',
-    element: <SignupPage />
-  }
+    element: <SignupPage />,
+  },
 ])
 
-const App = (props: Props) => {
+const App = () => {
   return (
     <Wrapper>
       <RouterProvider router={Router} />
