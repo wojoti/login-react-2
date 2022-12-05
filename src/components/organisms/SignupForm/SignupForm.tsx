@@ -1,32 +1,25 @@
 import { SyntheticEvent, useState } from 'react'
 import Button from '../../atoms/Button/Button'
 import Column from '../../atoms/Column/Column'
-import Label from '../../atoms/Label/Label'
-import TextInput from '../../atoms/TextInput/TextInput'
+import TextField from '../../molecules/TextField/TextField'
 
 const SignupForm = () => {
-  const [emailState, setEmailState] = useState({ email: '' })
-  const [passwordState, setPasswordState] = useState({ password: '' })
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
   const onEmailChange = (event: SyntheticEvent<HTMLInputElement>) => {
-    setEmailState({
-      ...emailState,
-      [event.currentTarget.id]: event.currentTarget.value,
-    })
+    setEmail(event.currentTarget.value)
   }
 
   const onPasswordChange = (event: SyntheticEvent<HTMLInputElement>) => {
-    setPasswordState({
-      ...passwordState,
-      [event.currentTarget.id]: event.currentTarget.value,
-    })
+    setPassword(event.currentTarget.value)
   }
 
   const onSignupSubmit = (event: SyntheticEvent<HTMLInputElement>) => {
-    // event.preventDefault(); //zbedne jezeli nie uzywam form
+    // event.preventDefault(); //don't use preventDefault when not using form
     const completeAction = {
-      ...emailState,
-      ...passwordState,
+      email,
+      password,
       action: event.currentTarget,
     }
     console.log(completeAction)
@@ -34,17 +27,15 @@ const SignupForm = () => {
   return (
     <>
       <Column mt={15}>
-        <Label>Email</Label>
-        <TextInput type='email' name='email' id='email' onFieldChange={onEmailChange}></TextInput>
+        <TextField type='email' name='Email' id='email' onFieldChange={onEmailChange}></TextField>
       </Column>
       <Column mt={15}>
-        <Label>Password</Label>
-        <TextInput
+        <TextField
           type='password'
-          name='password'
+          name='Password'
           id='password'
           onFieldChange={onPasswordChange}
-        ></TextInput>
+        ></TextField>
       </Column>
       <Column mt={15}>
         <Button id='signup-submit' name='signup-submit' onClick={onSignupSubmit}>

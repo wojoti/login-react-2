@@ -1,11 +1,10 @@
 import { SyntheticEvent, useState } from 'react'
 import Button from '../../atoms/Button/Button'
-import Checkbox from '../../atoms/Checkbox/Checkbox'
 import Column from '../../atoms/Column/Column'
-import Label from '../../atoms/Label/Label'
 import Link from '../../atoms/Link/Link'
 import Row from '../../atoms/Row/Row'
-import TextInput from '../../atoms/TextInput/TextInput'
+import CheckboxField from '../../molecules/CheckboxField/CheckboxField'
+import TextField from '../../molecules/TextField/TextField'
 
 const LoginForm = () => {
   const [email, setEmail] = useState('')
@@ -25,7 +24,7 @@ const LoginForm = () => {
   }
 
   const onLoginSubmit = (event: SyntheticEvent<HTMLInputElement>) => {
-    // event.preventDefault(); //dont use preventDefault when not using form
+    // event.preventDefault(); //don't use preventDefault when not using form
     const completeAction = {
       email,
       password,
@@ -37,21 +36,23 @@ const LoginForm = () => {
   return (
     <>
       <Column mt={15}>
-        <Label>Email</Label>
-        <TextInput type='email' name='email' id='email' onFieldChange={onEmailChange}></TextInput>
+        <TextField type='email' name='Email' id='email' onFieldChange={onEmailChange}></TextField>
       </Column>
       <Column mt={15}>
-        <Label>Password</Label>
-        <TextInput
+        <TextField
           type='password'
-          name='password'
+          name='Password'
           id='password'
           onFieldChange={onPasswordChange}
-        ></TextInput>
+        ></TextField>
       </Column>
       <Row mt={10} items='center'>
-        <Checkbox name='remember' id='remember' onChange={onRememberChange}></Checkbox>
-        <Label>Remember me?</Label>
+        <CheckboxField
+          name='remember'
+          id='remember'
+          label='Remember Me?'
+          onChange={onRememberChange}
+        ></CheckboxField>
       </Row>
       <Column mt={15}>
         <Button id='login-submit' name='login-submit' onClick={onLoginSubmit}>
