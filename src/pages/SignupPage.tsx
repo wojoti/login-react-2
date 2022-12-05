@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { RefHandler } from '../components/organisms/LoginForm/LoginForm'
+import { RefHandler } from '../components/organisms/SignupForm/SignupForm'
 import SignupTemplate from '../components/templates/SignupTemplate/SignupTemplate'
 
 const SignupPage = () => {
