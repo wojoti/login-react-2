@@ -7,16 +7,29 @@ interface Props {
   id: string
   onFieldChange?: React.ChangeEventHandler<HTMLInputElement>
 }
+export type Ref = HTMLInputElement
 
-const TextInput = (props: Props) => {
-  return (
-    <StyledTextInput
-      type={props.type}
-      name={props.name}
-      id={props.id}
-      onChange={props.onFieldChange}
-    ></StyledTextInput>
-  )
-}
+// const TextInput = (props: Props) => {
+//   return (
+//     <StyledTextInput
+//       type={props.type}
+//       name={props.name}
+//       id={props.id}
+//       onChange={props.onFieldChange}
+//       ref={ref}
+//     ></StyledTextInput>
+//   )
+// }
+
+const TextInput = React.forwardRef<Ref, Props>((props, ref) => (
+  <StyledTextInput
+    type={props.type}
+    name={props.name}
+    id={props.id}
+    onChange={props.onFieldChange}
+    ref={ref}
+  ></StyledTextInput>
+))
+TextInput.displayName = 'TextInput'
 
 export default TextInput

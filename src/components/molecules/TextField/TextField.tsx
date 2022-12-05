@@ -1,3 +1,4 @@
+import React from 'react'
 import Label from '../../atoms/Label/Label'
 import TextInput from '../../atoms/TextInput/TextInput'
 
@@ -10,6 +11,7 @@ type Props = {
 }
 
 const TextField = (props: Props) => {
+  const ref = React.createRef<HTMLInputElement>()
   return (
     <>
       <Label>{props.name}</Label>
@@ -18,6 +20,7 @@ const TextField = (props: Props) => {
         name={props.name}
         id={props.id}
         onFieldChange={props.onFieldChange}
+        ref={ref}
       ></TextInput>
     </>
   )

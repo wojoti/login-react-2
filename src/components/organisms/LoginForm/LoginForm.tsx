@@ -1,3 +1,4 @@
+import React from 'react'
 import Button from '../../atoms/Button/Button'
 import Column from '../../atoms/Column/Column'
 import Link from '../../atoms/Link/Link'
