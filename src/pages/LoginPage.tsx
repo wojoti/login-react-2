@@ -1,40 +1,21 @@
-import { SyntheticEvent, useState } from 'react'
+import { useEffect, useRef } from 'react'
+import { RefHandler } from '../components/organisms/LoginForm/LoginForm'
 import LoginTemplate from '../components/templates/LoginTemplate/LoginTemplate'
 const LoginPage = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [remember, setRemember] = useState(false)
+  const loginRef = useRef<RefHandler>(null)
 
-  const onEmailChange = (event: SyntheticEvent<HTMLInputElement>) => {
-    setEmail(event.currentTarget.value)
-  }
+  useEffect(() => {
+    loginRef?.current?.emailRef?.current?.focus()
+  })
 
-  const onPasswordChange = (event: SyntheticEvent<HTMLInputElement>) => {
-    setPassword(event.currentTarget.value)
+  const onLoginSubmit = () => {
+    console.log({
+      email: loginRef?.current?.emailRef?.current?.value,
+      password: loginRef?.current?.passwordRef?.current?.value,
+      rememberme: loginRef?.current?.rememberRef?.current?.checked,
+    })
   }
-
-  const onRememberChange = (event: SyntheticEvent<HTMLInputElement>) => {
-    setRemember(event.currentTarget.checked)
-  }
-
-  const onLoginSubmit = (event: SyntheticEvent<HTMLInputElement>) => {
-    // event.preventDefault(); //don't use preventDefault when not using form
-    const completeAction = {
-      email,
-      password,
-      remember,
-      action: event.currentTarget,
-    }
-    console.log(completeAction)
-  }
-  return (
-    <LoginTemplate
-      onEmailChange={onEmailChange}
-      onPasswordChange={onPasswordChange}
-      onRememberChange={onRememberChange}
-      onLoginSubmit={onLoginSubmit}
-    />
-  )
+  return <LoginTemplate ref={loginRef} onLoginSubmit={onLoginSubmit} />
 }
 
 export default LoginPage

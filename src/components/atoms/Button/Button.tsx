@@ -8,16 +8,30 @@ interface Props {
   onClick?: React.MouseEventHandler<HTMLInputElement>
 }
 
-const Button = (props: Props) => {
-  return (
-    <StyledButton
-      type="submit"
-      name={props.name}
-      id={props.id}
-      value={props.children}
-      onClick={props.onClick}
-    />
-  )
-}
+export type Ref = HTMLInputElement
+
+const Button = React.forwardRef<Ref, Props>((props, ref) => (
+  <StyledButton
+    type='submit'
+    name={props.name}
+    id={props.id}
+    value={props.children}
+    onClick={props.onClick}
+    ref={ref}
+  />
+))
+Button.displayName = 'Button'
+
+// const Button = (props: Props) => {
+//   return (
+//     <StyledButton
+//       type="submit"
+//       name={props.name}
+//       id={props.id}
+//       value={props.children}
+//       onClick={props.onClick}
+//     />
+//   )
+// }
 
 export default Button

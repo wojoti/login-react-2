@@ -1,3 +1,4 @@
+import { forwardRef } from 'react'
 import Column from '../../atoms/Column/Column'
 import Container from '../../atoms/Container/Container'
 import Header from '../../atoms/Header/Header'
@@ -5,22 +6,16 @@ import Label from '../../atoms/Label/Label'
 import Link from '../../atoms/Link/Link'
 import Row from '../../atoms/Row/Row'
 import Breakline from '../../molecules/Breakline/Breakline'
-import SignupForm from '../../organisms/SignupForm/SignupForm'
+import SignupForm, { RefHandler } from '../../organisms/SignupForm/SignupForm'
 import SocialIcons from '../../organisms/SocialIcons/SocialIcons'
 type Props = {
-  onEmailChange: React.ChangeEventHandler<HTMLInputElement>
-  onPasswordChange: React.ChangeEventHandler<HTMLInputElement>
   onSignupSubmit: React.MouseEventHandler<HTMLInputElement>
 }
-const SignupTemplate = (props: Props) => {
+const SignupTemplate = forwardRef<RefHandler, Props>((props, ref) => {
   return (
     <Container>
       <Header>SIGN UP</Header>
-      <SignupForm
-        onEmailChange={props.onEmailChange}
-        onPasswordChange={props.onPasswordChange}
-        onSignupSubmit={props.onSignupSubmit}
-      />
+      <SignupForm ref={ref} onSignupSubmit={props.onSignupSubmit} />
       <Column mt={30} mb={35}>
         <Breakline>OR</Breakline>
       </Column>
@@ -32,6 +27,8 @@ const SignupTemplate = (props: Props) => {
       </Row>
     </Container>
   )
-}
+})
+
+SignupTemplate.displayName = 'SignupTemplate'
 
 export default SignupTemplate

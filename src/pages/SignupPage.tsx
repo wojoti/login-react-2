@@ -1,34 +1,20 @@
-import { SyntheticEvent, useState } from 'react'
+import { useEffect, useRef } from 'react'
+import { RefHandler } from '../components/organisms/LoginForm/LoginForm'
 import SignupTemplate from '../components/templates/SignupTemplate/SignupTemplate'
 
 const SignupPage = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const signupRef = useRef<RefHandler>(null)
 
-  const onEmailChange = (event: SyntheticEvent<HTMLInputElement>) => {
-    setEmail(event.currentTarget.value)
+  useEffect(() => {
+    signupRef?.current?.emailRef?.current?.focus()
+  })
+  const onSignupSubmit = () => {
+    console.log({
+      email: signupRef?.current?.emailRef?.current?.value,
+      password: signupRef?.current?.passwordRef?.current?.value,
+    })
   }
-
-  const onPasswordChange = (event: SyntheticEvent<HTMLInputElement>) => {
-    setPassword(event.currentTarget.value)
-  }
-
-  const onSignupSubmit = (event: SyntheticEvent<HTMLInputElement>) => {
-    // event.preventDefault(); //don't use preventDefault when not using form
-    const completeAction = {
-      email,
-      password,
-      action: event.currentTarget,
-    }
-    console.log(completeAction)
-  }
-  return (
-    <SignupTemplate
-      onEmailChange={onEmailChange}
-      onPasswordChange={onPasswordChange}
-      onSignupSubmit={onSignupSubmit}
-    />
-  )
+  return <SignupTemplate ref={signupRef} onSignupSubmit={onSignupSubmit} />
 }
 
 export default SignupPage
