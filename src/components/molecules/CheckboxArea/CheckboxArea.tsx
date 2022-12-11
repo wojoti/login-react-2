@@ -1,7 +1,7 @@
 import React from 'react'
 import Checkbox from '../../atoms/Checkbox/Checkbox'
 import Label from '../../atoms/Label/Label'
-import { Ref } from '../../atoms/TextInput/TextInput'
+import { Ref } from '../../atoms/TextField/TextField'
 
 type Props = {
   name: string
@@ -11,15 +11,15 @@ type Props = {
   label: string
 }
 
-const CheckboxField = React.forwardRef<Ref, Props>((props, ref) => (
+const CheckboxArea = React.forwardRef<Ref, Props>((props, ref) => (
   <>
     <Checkbox name={props.name} id={props.id} onChange={props.onChange} ref={ref}></Checkbox>
     <Label>{props.label}</Label>
   </>
 ))
-CheckboxField.displayName = 'CheckboxField'
+CheckboxArea.displayName = 'CheckboxArea'
 
-// const CheckboxField = (props: Props) => {
+// const CheckboxArea = (props: Props) => {
 //   return (
 //     <>
 //       <Checkbox name={props.name} id={props.id} onChange={props.onChange}></Checkbox>
@@ -28,4 +28,4 @@ CheckboxField.displayName = 'CheckboxField'
 //   )
 // }
 
-export default CheckboxField
+export default CheckboxArea

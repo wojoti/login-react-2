@@ -1,6 +1,6 @@
 import React from 'react'
 import Label from '../../atoms/Label/Label'
-import TextInput, { Ref } from '../../atoms/TextInput/TextInput'
+import TextField, { Ref } from '../../atoms/TextField/TextField'
 
 type Props = {
   type: string
@@ -10,19 +10,19 @@ type Props = {
   onFieldChange?: React.ChangeEventHandler<HTMLInputElement>
 }
 
-const TextField = React.forwardRef<Ref, Props>((props, ref) => (
+const TextArea = React.forwardRef<Ref, Props>((props, ref) => (
   <>
     <Label>{props.name}</Label>
-    <TextInput
+    <TextField
       type={props.type}
       name={props.name}
       id={props.id}
       onFieldChange={props.onFieldChange}
       ref={ref}
-    ></TextInput>
+    />
   </>
 ))
-TextField.displayName = 'TextField'
+TextArea.displayName = 'TextArea'
 
 // const TextField = (props: Props) => {
 //   const ref = React.createRef<HTMLInputElement>()
@@ -40,4 +40,4 @@ TextField.displayName = 'TextField'
 //   )
 // }
 
-export default TextField
+export default TextArea

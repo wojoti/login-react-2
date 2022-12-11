@@ -1,45 +1,55 @@
-import { forwardRef, RefObject, useImperativeHandle, useRef } from 'react'
+import { forwardRef, useImperativeHandle, useRef } from 'react'
 import Button from '../../atoms/Button/Button'
 import Column from '../../atoms/Column/Column'
 import Link from '../../atoms/Link/Link'
 import Row from '../../atoms/Row/Row'
-import CheckboxField from '../../molecules/CheckboxField/CheckboxField'
-import TextField from '../../molecules/TextField/TextField'
-type Props = { onLoginSubmit: React.MouseEventHandler<HTMLInputElement> }
-
-export type RefHandler = {
-  emailRef: RefObject<HTMLInputElement>
-  passwordRef: RefObject<HTMLInputElement>
-  rememberRef: RefObject<HTMLInputElement>
+import CheckboxArea from '../../molecules/CheckboxArea/CheckboxArea'
+import TextArea from '../../molecules/TextArea/TextArea'
+type LoginFormProps = {
+  onLoginSubmit: (email: string, password: string, rememberMe: boolean) => void
 }
-// eslint-disable-next-line
-const LoginForm = forwardRef<RefHandler, Props>((props, ref) => {
+
+export type LoginFormHandle = {
+  focus: () => void
+}
+const LoginForm = forwardRef<LoginFormHandle, LoginFormProps>((props, ref) => {
   const emailRef = useRef<HTMLInputElement>(null)
   const passwordRef = useRef<HTMLInputElement>(null)
   const rememberRef = useRef<HTMLInputElement>(null)
-  useImperativeHandle(ref, () => ({
-    emailRef: emailRef,
-    passwordRef: passwordRef,
-    rememberRef: rememberRef,
-  }))
+  useImperativeHandle(
+    ref,
+    () => ({
+      focus: () => {
+        emailRef.current?.focus()
+      },
+    }),
+    [],
+  )
+  const onSubmit = () => {
+    props.onLoginSubmit(
+      emailRef.current!.value,
+      passwordRef.current!.value,
+      rememberRef.current!.checked,
+    )
+  }
   return (
     <>
       <Column mt={15}>
-        <TextField type='email' name='Email' id='email' ref={emailRef}></TextField>
+        <TextArea type='email' name='Email' id='email' ref={emailRef} />
       </Column>
       <Column mt={15}>
-        <TextField type='password' name='Password' id='password' ref={passwordRef}></TextField>
+        <TextArea type='password' name='Password' id='password' ref={passwordRef} />
       </Column>
       <Row mt={10} items='center'>
-        <CheckboxField
+        <CheckboxArea
           name='remember'
           id='remember'
           label='Remember Me?'
           ref={rememberRef}
-        ></CheckboxField>
+        ></CheckboxArea>
       </Row>
       <Column mt={15}>
-        <Button id='login-submit' name='login-submit' onClick={props.onLoginSubmit}>
+        <Button id='login-submit' name='login-submit' onClick={onSubmit}>
           LOGIN
         </Button>
       </Column>
@@ -59,18 +69,18 @@ LoginForm.displayName = 'LoginForm'
 //   return (
 //     <>
 //       <Column mt={15}>
-//         <TextField type='email' name='Email' id='email' ref={emailRef}></TextField>
+//         <TextArea type='email' name='Email' id='email' ref={emailRef}></TextArea>
 //       </Column>
 //       <Column mt={15}>
-//         <TextField type='password' name='Password' id='password' ref={pwdRef}></TextField>
+//         <TextArea type='password' name='Password' id='password' ref={pwdRef}></TextArea>
 //       </Column>
 //       <Row mt={10} items='center'>
-//         <CheckboxField
+//         <CheckboxArea
 //           name='remember'
 //           id='remember'
 //           label='Remember Me?'
 //           onChange={props.onRememberChange}
-//         ></CheckboxField>
+//         ></CheckboxArea>
 //       </Row>
 //       <Column mt={15}>
 //         <Button id='login-submit' name='login-submit' onClick={props.onLoginSubmit}>
