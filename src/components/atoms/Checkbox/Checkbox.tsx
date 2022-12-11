@@ -1,5 +1,5 @@
-import React from 'react'
-import { StyledCheckbox } from './Checkbox.style'
+import React from 'react';
+import StyledCheckbox from './Checkbox.style';
 
 interface Props {
   name: string
@@ -8,19 +8,19 @@ interface Props {
   onChange?: React.ChangeEventHandler<HTMLInputElement>
 }
 
-export type Ref = HTMLInputElement
+export type Ref = HTMLInputElement;
 
 const Checkbox = React.forwardRef<Ref, Props>((props, ref) => (
   <StyledCheckbox
-    type='checkbox'
+    type="checkbox"
     name={props.name}
     id={props.id}
     value={props.value}
     onChange={props.onChange}
     ref={ref}
   />
-))
-Checkbox.displayName = 'Checkbox'
+));
+Checkbox.displayName = 'Checkbox';
 
 // const Checkbox = (props: Props) => {
 //   return (
@@ -34,4 +34,4 @@ Checkbox.displayName = 'Checkbox'
 //   )
 // }
 
-export default Checkbox
+export default Checkbox;

@@ -1,14 +1,13 @@
-import React from 'react'
-import Label from '../../atoms/Label/Label'
-import TextField, { Ref } from '../../atoms/TextField/TextField'
+import React from 'react';
+import Label from '../../atoms/Label/Label';
+import TextField, { Ref } from '../../atoms/TextField/TextField';
 
 type Props = {
   type: string
   name: string
   id: string
-  color?: string
   onFieldChange?: React.ChangeEventHandler<HTMLInputElement>
-}
+};
 
 const TextArea = React.forwardRef<Ref, Props>((props, ref) => (
   <>
@@ -21,8 +20,8 @@ const TextArea = React.forwardRef<Ref, Props>((props, ref) => (
       ref={ref}
     />
   </>
-))
-TextArea.displayName = 'TextArea'
+));
+TextArea.displayName = 'TextArea';
 
 // const TextField = (props: Props) => {
 //   const ref = React.createRef<HTMLInputElement>()
@@ -40,4 +39,4 @@ TextArea.displayName = 'TextArea'
 //   )
 // }
 
-export default TextArea
+export default TextArea;

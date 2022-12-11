@@ -1,12 +1,12 @@
-import React from 'react'
-import { StyledHeader } from './Header.style'
+import React from 'react';
+import StyledHeader from './Header.style';
 
 interface Props {
   children?: React.ReactNode
 }
 
-const Header = (props: Props) => {
-  return <StyledHeader>{props.children}</StyledHeader>
+function Header(props: Props) {
+  return <StyledHeader>{props.children}</StyledHeader>;
 }
 
-export default Header
+export default Header;

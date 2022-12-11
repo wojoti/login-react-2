@@ -1,5 +1,5 @@
-import React from 'react'
-import { StyledTextField } from './TextField.style'
+import React from 'react';
+import StyledTextField from './TextField.style';
 
 interface Props {
   type: string
@@ -7,7 +7,7 @@ interface Props {
   id: string
   onFieldChange?: React.ChangeEventHandler<HTMLInputElement>
 }
-export type Ref = HTMLInputElement
+export type Ref = HTMLInputElement;
 
 const TextField = React.forwardRef<Ref, Props>((props, ref) => (
   <StyledTextField
@@ -16,8 +16,8 @@ const TextField = React.forwardRef<Ref, Props>((props, ref) => (
     id={props.id}
     onChange={props.onFieldChange}
     ref={ref}
-  ></StyledTextField>
-))
-TextField.displayName = 'TextField'
+  />
+));
+TextField.displayName = 'TextField';
 
-export default TextField
+export default TextField;

@@ -1,5 +1,5 @@
-import React from 'react'
-import { StyledLink } from './Link.style'
+import React from 'react';
+import StyledLink from './Link.style';
 
 interface Props {
   children: React.ReactNode
@@ -8,12 +8,12 @@ interface Props {
   color?: string
 }
 
-const Link = (props: Props) => {
+function Link(props: Props) {
   return (
     <StyledLink decoration={props.decoration} href={props.href} color={props.color}>
       {props.children}
     </StyledLink>
-  )
+  );
 }
 
-export default Link
+export default Link;

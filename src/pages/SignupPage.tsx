@@ -1,13 +1,14 @@
-import SignupTemplate from '../components/templates/SignupTemplate/SignupTemplate'
+import React from 'react';
+import SignupTemplate from '../components/templates/SignupTemplate/SignupTemplate';
 
-const SignupPage = () => {
+function SignupPage() {
   const onSignupSubmit = (email: string, password: string) => {
     console.log({
-      email: email,
-      password: password,
-    })
-  }
-  return <SignupTemplate onSignupSubmit={onSignupSubmit} />
+      email,
+      password,
+    });
+  };
+  return <SignupTemplate onSignupSubmit={onSignupSubmit} />;
 }
 
-export default SignupPage
+export default SignupPage;

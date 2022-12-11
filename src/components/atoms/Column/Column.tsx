@@ -1,5 +1,5 @@
-import React from 'react'
-import { Wrapper } from './Column.style'
+import React from 'react';
+import Wrapper from './Column.style';
 
 interface Props {
   children?: React.ReactNode
@@ -15,7 +15,7 @@ interface Props {
   items?: string
 }
 
-const Column = (props: Props) => {
+function Column(props: Props) {
   return (
     <Wrapper
       mt={props.mt}
@@ -31,7 +31,7 @@ const Column = (props: Props) => {
     >
       {props.children}
     </Wrapper>
-  )
+  );
 }
 
-export default Column
+export default Column;

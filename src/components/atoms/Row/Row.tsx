@@ -1,5 +1,5 @@
-import React from 'react'
-import { Wrapper } from './Row.style'
+import React from 'react';
+import Wrapper from './Row.style';
 
 interface Props {
   children?: React.ReactNode
@@ -15,7 +15,7 @@ interface Props {
   items?: string
 }
 
-const Section = (props: Props) => {
+function Section(props: Props) {
   return (
     <Wrapper
       mt={props.mt}
@@ -31,7 +31,7 @@ const Section = (props: Props) => {
     >
       {props.children}
     </Wrapper>
-  )
+  );
 }
 
-export default Section
+export default Section;

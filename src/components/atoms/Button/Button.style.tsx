@@ -1,5 +1,6 @@
-import styled from 'styled-components'
-export const StyledButton = styled.input`
+import styled from 'styled-components';
+
+const StyledButton = styled.input`
   width: 100%;
   height: 32px;
   border-radius: 6px;
@@ -12,4 +13,6 @@ export const StyledButton = styled.input`
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-`
+`;
+
+export default StyledButton;

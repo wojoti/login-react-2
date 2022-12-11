@@ -1,45 +1,46 @@
-import { forwardRef, useImperativeHandle, useRef } from 'react'
-import Button from '../../atoms/Button/Button'
-import Column from '../../atoms/Column/Column'
-import TextArea from '../../molecules/TextArea/TextArea'
+import React, { forwardRef, useImperativeHandle, useRef } from 'react';
+import Button from '../../atoms/Button/Button';
+import Column from '../../atoms/Column/Column';
+import TextArea from '../../molecules/TextArea/TextArea';
+
 type SignupFormProps = {
   onSignupSubmit: (email: string, password: string) => void
-}
+};
 
 export type SignupFormHandle = {
   focus: () => void
-}
+};
 const SignupForm = forwardRef<SignupFormHandle, SignupFormProps>((props, ref) => {
-  const emailRef = useRef<HTMLInputElement>(null)
-  const passwordRef = useRef<HTMLInputElement>(null)
+  const emailRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
   useImperativeHandle(
     ref,
     () => ({
       focus: () => {
-        emailRef.current?.focus()
+        emailRef.current?.focus();
       },
     }),
     [],
-  )
+  );
   const onSubmit = () => {
-    props.onSignupSubmit(emailRef.current!.value, passwordRef.current!.value)
-  }
+    props.onSignupSubmit(emailRef.current!.value, passwordRef.current!.value);
+  };
   return (
     <>
       <Column mt={15}>
-        <TextArea type='email' name='Email' id='email' ref={emailRef}></TextArea>
+        <TextArea type="email" name="Email" id="email" ref={emailRef} />
       </Column>
       <Column mt={15}>
-        <TextArea type='password' name='Password' id='password' ref={passwordRef}></TextArea>
+        <TextArea type="password" name="Password" id="password" ref={passwordRef} />
       </Column>
       <Column mt={15}>
-        <Button id='signup-submit' name='signup-submit' onClick={onSubmit}>
+        <Button id="signup-submit" name="signup-submit" onClick={onSubmit}>
           SIGN UP
         </Button>
       </Column>
     </>
-  )
-})
-SignupForm.displayName = 'SignupForm'
+  );
+});
+SignupForm.displayName = 'SignupForm';
 
-export default SignupForm
+export default SignupForm;

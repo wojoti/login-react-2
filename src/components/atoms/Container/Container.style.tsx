@@ -1,5 +1,6 @@
-import styled from 'styled-components'
-export const Wrapper = styled.div`
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
@@ -17,4 +18,5 @@ export const Wrapper = styled.div`
   border-radius: 0.5rem;
   width: 20rem;
   height: 450px;
-`
+`;
+export default Wrapper;

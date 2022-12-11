@@ -1,5 +1,5 @@
-import React from 'react'
-import { StyledButton } from './Button.style'
+import React from 'react';
+import StyledButton from './Button.style';
 
 interface Props {
   name: string
@@ -8,19 +8,19 @@ interface Props {
   onClick?: React.MouseEventHandler<HTMLInputElement>
 }
 
-export type Ref = HTMLInputElement
+export type Ref = HTMLInputElement;
 
 const Button = React.forwardRef<Ref, Props>((props, ref) => (
   <StyledButton
-    type='submit'
+    type="submit"
     name={props.name}
     id={props.id}
     value={props.children}
     onClick={props.onClick}
     ref={ref}
   />
-))
-Button.displayName = 'Button'
+));
+Button.displayName = 'Button';
 
 // const Button = (props: Props) => {
 //   return (
@@ -34,4 +34,4 @@ Button.displayName = 'Button'
 //   )
 // }
 
-export default Button
+export default Button;

@@ -1,5 +1,6 @@
-import React from 'react'
-import { StyledIcon } from './Icon.style'
+import React from 'react';
+import StyledIcon from './Icon.style';
+
 export enum IconType {
   facebook = './img/facebook.svg',
   linkedin = './img/linkedin.svg',
@@ -13,7 +14,7 @@ interface Props {
   alt: string
 }
 
-export const Icon = (props: Props) => {
+export function Icon(props: Props) {
   return (
     <StyledIcon
       src={props.type}
@@ -21,5 +22,5 @@ export const Icon = (props: Props) => {
       height={props.height}
       alt={props.alt}
     />
-  )
+  );
 }

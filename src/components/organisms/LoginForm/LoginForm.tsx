@@ -1,68 +1,69 @@
-import { forwardRef, useImperativeHandle, useRef } from 'react'
-import Button from '../../atoms/Button/Button'
-import Column from '../../atoms/Column/Column'
-import Link from '../../atoms/Link/Link'
-import Row from '../../atoms/Row/Row'
-import CheckboxArea from '../../molecules/CheckboxArea/CheckboxArea'
-import TextArea from '../../molecules/TextArea/TextArea'
+import React, { forwardRef, useImperativeHandle, useRef } from 'react';
+import Button from '../../atoms/Button/Button';
+import Column from '../../atoms/Column/Column';
+import Link from '../../atoms/Link/Link';
+import Row from '../../atoms/Row/Row';
+import CheckboxArea from '../../molecules/CheckboxArea/CheckboxArea';
+import TextArea from '../../molecules/TextArea/TextArea';
+
 type LoginFormProps = {
   onLoginSubmit: (email: string, password: string, rememberMe: boolean) => void
-}
+};
 
 export type LoginFormHandle = {
   focus: () => void
-}
+};
 const LoginForm = forwardRef<LoginFormHandle, LoginFormProps>((props, ref) => {
-  const emailRef = useRef<HTMLInputElement>(null)
-  const passwordRef = useRef<HTMLInputElement>(null)
-  const rememberRef = useRef<HTMLInputElement>(null)
+  const emailRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
+  const rememberRef = useRef<HTMLInputElement>(null);
   useImperativeHandle(
     ref,
     () => ({
       focus: () => {
-        emailRef.current?.focus()
+        emailRef.current?.focus();
       },
     }),
     [],
-  )
+  );
   const onSubmit = () => {
     props.onLoginSubmit(
       emailRef.current!.value,
       passwordRef.current!.value,
       rememberRef.current!.checked,
-    )
-  }
+    );
+  };
   return (
     <>
       <Column mt={15}>
-        <TextArea type='email' name='Email' id='email' ref={emailRef} />
+        <TextArea type="email" name="Email" id="email" ref={emailRef} />
       </Column>
       <Column mt={15}>
-        <TextArea type='password' name='Password' id='password' ref={passwordRef} />
+        <TextArea type="password" name="Password" id="password" ref={passwordRef} />
       </Column>
-      <Row mt={10} items='center'>
+      <Row mt={10} items="center">
         <CheckboxArea
-          name='remember'
-          id='remember'
-          label='Remember Me?'
+          name="remember"
+          id="remember"
+          label="Remember Me?"
           ref={rememberRef}
-        ></CheckboxArea>
+        />
       </Row>
       <Column mt={15}>
-        <Button id='login-submit' name='login-submit' onClick={onSubmit}>
+        <Button id="login-submit" name="login-submit" onClick={onSubmit}>
           LOGIN
         </Button>
       </Column>
 
-      <Column items='flex-end'>
-        <Link decoration='none' href='/' color='rgb(107 114 128)'>
+      <Column items="flex-end">
+        <Link decoration="none" href="/" color="rgb(107 114 128)">
           Forgot Password?
         </Link>
       </Column>
     </>
-  )
-})
-LoginForm.displayName = 'LoginForm'
+  );
+});
+LoginForm.displayName = 'LoginForm';
 
 // const LoginForm = (props: Props) => {
 
@@ -97,4 +98,4 @@ LoginForm.displayName = 'LoginForm'
 //   )
 // }
 
-export default LoginForm
+export default LoginForm;

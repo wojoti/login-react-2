@@ -1,9 +1,10 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
+
 interface Props {
   decoration?: string
   color?: string
 }
-export const StyledLink = styled.a<Props>`
+const StyledLink = styled.a<Props>`
   text-decoration: ${(props) => props.decoration || 'underline'};
   color: ${(props) => props.color || 'inherit'};
   font-size: 14px;
@@ -11,4 +12,5 @@ export const StyledLink = styled.a<Props>`
   &:visited {
     color: ${(props) => props.color || 'inherit'};
   }
-`
+`;
+export default StyledLink;

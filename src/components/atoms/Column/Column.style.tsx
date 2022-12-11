@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
+
 interface Props {
   mt?: number
   mb?: number
@@ -12,7 +13,7 @@ interface Props {
   items?: string
 }
 
-export const Wrapper = styled.div<Props>`
+const Wrapper = styled.div<Props>`
   margin-top: ${(props) => props.mt || 0}px;
   margin-bottom: ${(props) => props.mb || 0}px;
   margin-left: ${(props) => props.ml || 0}px;
@@ -25,4 +26,5 @@ export const Wrapper = styled.div<Props>`
   flex-direction: column;
   justify-content: ${(props) => props.justify || 'start'};
   align-items: ${(props) => props.items || 'start'};
-`
+`;
+export default Wrapper;
