@@ -1,5 +1,4 @@
-import React from 'react';
-import SignupTemplate from '../components/templates/SignupTemplate/SignupTemplate';
+import SignupTemplate from "../components/templates/SignupTemplate/SignupTemplate";
 
 function SignupPage() {
   const onSignupSubmit = (email: string, password: string) => {

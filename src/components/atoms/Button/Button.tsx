@@ -1,37 +1,18 @@
-import React from 'react';
-import StyledButton from './Button.style';
+import { forwardRef } from "react";
+import StyledButton from "./Button.style";
 
 interface Props {
-  name: string
-  id: string
-  children?: string
-  onClick?: React.MouseEventHandler<HTMLInputElement>
+  name: string;
+  onClick: () => void;
 }
 
-export type Ref = HTMLInputElement;
+export type ButtonRef = HTMLButtonElement;
 
-const Button = React.forwardRef<Ref, Props>((props, ref) => (
-  <StyledButton
-    type="submit"
-    name={props.name}
-    id={props.id}
-    value={props.children}
-    onClick={props.onClick}
-    ref={ref}
-  />
+const Button = forwardRef<ButtonRef, Props>(({ name, onClick }, ref) => (
+  <StyledButton type="submit" onClick={onClick} ref={ref}>
+    {name}
+  </StyledButton>
 ));
-Button.displayName = 'Button';
-
-// const Button = (props: Props) => {
-//   return (
-//     <StyledButton
-//       type="submit"
-//       name={props.name}
-//       id={props.id}
-//       value={props.children}
-//       onClick={props.onClick}
-//     />
-//   )
-// }
+Button.displayName = "Button";
 
 export default Button;

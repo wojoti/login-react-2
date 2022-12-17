@@ -1,24 +1,18 @@
-import React from 'react';
-import {
-  MaxWidthDiv,
-  GreyLineDiv,
-  RelativeDiv,
-  StyledText,
-} from './Breakline.style';
+import * as Styles from "./Breakline.style";
 
 interface Props {
-  children?: string
+  children?: string;
 }
 
-function Breakline(props: Props) {
+function Breakline({ children }: Props) {
   return (
-    <MaxWidthDiv>
-      <GreyLineDiv>
-        <RelativeDiv>
-          <StyledText>{props.children}</StyledText>
-        </RelativeDiv>
-      </GreyLineDiv>
-    </MaxWidthDiv>
+    <Styles.MaxWidthDiv>
+      <Styles.GreyLineDiv>
+        <Styles.RelativeDiv>
+          <Styles.StyledText>{children}</Styles.StyledText>
+        </Styles.RelativeDiv>
+      </Styles.GreyLineDiv>
+    </Styles.MaxWidthDiv>
   );
 }
 

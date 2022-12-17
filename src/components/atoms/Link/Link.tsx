@@ -1,17 +1,16 @@
-import React from 'react';
-import StyledLink from './Link.style';
+import StyledLink from "./Link.style";
 
 interface Props {
-  children: React.ReactNode
-  decoration?: string
-  href: string
-  color?: string
+  children: React.ReactNode;
+  decoration?: string;
+  href: string;
+  color?: string;
 }
 
-function Link(props: Props) {
+function Link({ decoration, href, color, children }: Props) {
   return (
-    <StyledLink decoration={props.decoration} href={props.href} color={props.color}>
-      {props.children}
+    <StyledLink decoration={decoration} href={href} color={color}>
+      {children}
     </StyledLink>
   );
 }

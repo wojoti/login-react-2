@@ -1,18 +1,14 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-const StyledButton = styled.input`
+const StyledButton = styled.button`
   width: 100%;
   height: 32px;
   border-radius: 6px;
   border: 0px solid black;
-  --tw-bg-opacity: 1;
-  background-color: rgb(244 63 94 / var(--tw-bg-opacity));
+  background-color: rgb(244 63 94);
   color: white;
   cursor: pointer;
-  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
-    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
 `;
 
 export default StyledButton;

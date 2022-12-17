@@ -1,37 +1,16 @@
-import React from 'react';
-import StyledCheckbox from './Checkbox.style';
+import { forwardRef } from "react";
+import StyledCheckbox from "./Checkbox.style";
 
 interface Props {
-  name: string
-  id: string
-  value?: string
-  onChange?: React.ChangeEventHandler<HTMLInputElement>
+  name: string;
+  id: string;
 }
 
-export type Ref = HTMLInputElement;
+export type CheckboxRef = HTMLInputElement;
 
-const Checkbox = React.forwardRef<Ref, Props>((props, ref) => (
-  <StyledCheckbox
-    type="checkbox"
-    name={props.name}
-    id={props.id}
-    value={props.value}
-    onChange={props.onChange}
-    ref={ref}
-  />
+const Checkbox = forwardRef<CheckboxRef, Props>(({ name, id }, ref) => (
+  <StyledCheckbox type="checkbox" name={name} id={id} ref={ref} />
 ));
-Checkbox.displayName = 'Checkbox';
-
-// const Checkbox = (props: Props) => {
-//   return (
-//     <StyledCheckbox
-//       type='checkbox'
-//       name={props.name}
-//       id={props.id}
-//       value={props.value}
-//       onChange={props.onChange}
-//     />
-//   )
-// }
+Checkbox.displayName = "Checkbox";
 
 export default Checkbox;

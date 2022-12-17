@@ -1,12 +1,11 @@
-import React from 'react';
-import Wrapper from './Container.style';
+import Wrapper from "./Container.style";
 
 interface Props {
-  children?: React.ReactNode
+  children?: React.ReactNode;
 }
 
-function Container(props: Props) {
-  return <Wrapper>{props.children}</Wrapper>;
+function Container({ children }: Props) {
+  return <Wrapper>{children}</Wrapper>;
 }
 
 export default Container;

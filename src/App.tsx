@@ -1,16 +1,15 @@
-import React from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Wrapper from './App.style';
-import LoginPage from './pages/LoginPage';
-import SignupPage from './pages/SignupPage';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Wrapper from "./App.style";
+import LoginPage from "./pages/LoginPage";
+import SignupPage from "./pages/SignupPage";
 
 const Router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <LoginPage />,
   },
   {
-    path: 'signup',
+    path: "signup",
     element: <SignupPage />,
   },
 ]);

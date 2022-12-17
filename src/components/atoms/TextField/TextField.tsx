@@ -1,23 +1,21 @@
-import React from 'react';
-import StyledTextField from './TextField.style';
+import { forwardRef } from "react";
+import StyledTextField from "./TextField.style";
 
 interface Props {
-  type: string
-  name: string
-  id: string
-  onFieldChange?: React.ChangeEventHandler<HTMLInputElement>
+  type: string;
+  name: string;
+  id: string;
 }
-export type Ref = HTMLInputElement;
+export type TextFieldRef = HTMLInputElement;
 
-const TextField = React.forwardRef<Ref, Props>((props, ref) => (
+const TextField = forwardRef<TextFieldRef, Props>((props, ref) => (
   <StyledTextField
     type={props.type}
     name={props.name}
     id={props.id}
-    onChange={props.onFieldChange}
     ref={ref}
   />
 ));
-TextField.displayName = 'TextField';
+TextField.displayName = "TextField";
 
 export default TextField;

@@ -1,13 +1,12 @@
-import React from 'react';
-import StyledLabel from './Label.style';
+import StyledLabel from "./Label.style";
 
 interface Props {
-  children?: React.ReactNode
-  color?: string
+  children?: React.ReactNode;
+  color?: string;
 }
 
-function Label(props: Props) {
-  return <StyledLabel color={props.color}>{props.children}</StyledLabel>;
+function Label({ children, color }: Props) {
+  return <StyledLabel color={color}>{children}</StyledLabel>;
 }
 
 export default Label;

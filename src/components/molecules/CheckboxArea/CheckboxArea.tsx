@@ -1,31 +1,23 @@
-import React from 'react';
-import Checkbox from '../../atoms/Checkbox/Checkbox';
-import Label from '../../atoms/Label/Label';
-import { Ref } from '../../atoms/TextField/TextField';
+import { forwardRef } from "react";
+import Checkbox from "../../atoms/Checkbox/Checkbox";
+import Label from "../../atoms/Label/Label";
 
 type Props = {
-  name: string
-  id: string
-  value?: string
-  onChange?: React.ChangeEventHandler<HTMLInputElement>
-  label: string
+  name: string;
+  id: string;
+  label: string;
 };
 
-const CheckboxArea = React.forwardRef<Ref, Props>((props, ref) => (
-  <>
-    <Checkbox name={props.name} id={props.id} onChange={props.onChange} ref={ref} />
-    <Label>{props.label}</Label>
-  </>
-));
-CheckboxArea.displayName = 'CheckboxArea';
+export type CheckboxAreaRef = HTMLInputElement;
 
-// const CheckboxArea = (props: Props) => {
-//   return (
-//     <>
-//       <Checkbox name={props.name} id={props.id} onChange={props.onChange}></Checkbox>
-//       <Label>{props.label}</Label>
-//     </>
-//   )
-// }
+const CheckboxArea = forwardRef<CheckboxAreaRef, Props>(
+  ({ name, id, label }, ref) => (
+    <>
+      <Checkbox name={name} id={id} ref={ref} />
+      <Label>{label}</Label>
+    </>
+  )
+);
+CheckboxArea.displayName = "CheckboxArea";
 
 export default CheckboxArea;
