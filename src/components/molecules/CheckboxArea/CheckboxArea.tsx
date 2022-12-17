@@ -1,6 +1,6 @@
+import Checkbox from "@atoms/Checkbox/Checkbox";
+import Label from "@atoms/Label/Label";
 import { forwardRef } from "react";
-import Checkbox from "../../atoms/Checkbox/Checkbox";
-import Label from "../../atoms/Label/Label";
 
 type Props = {
   name: string;

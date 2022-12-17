@@ -1,10 +1,10 @@
+import Button from "@atoms/Button/Button";
+import Column from "@atoms/Column/Column";
+import Link from "@atoms/Link/Link";
+import Row from "@atoms/Row/Row";
+import CheckboxArea from "@molecules/CheckboxArea/CheckboxArea";
+import TextInput from "@molecules/TextInput/TextInput";
 import { forwardRef, useImperativeHandle, useRef } from "react";
-import Button from "../../atoms/Button/Button";
-import Column from "../../atoms/Column/Column";
-import Link from "../../atoms/Link/Link";
-import Row from "../../atoms/Row/Row";
-import CheckboxArea from "../../molecules/CheckboxArea/CheckboxArea";
-import TextInput from "../../molecules/TextInput/TextInput";
 
 type LoginFormProps = {
   onLoginSubmit: (email: string, password: string, rememberMe: boolean) => void;

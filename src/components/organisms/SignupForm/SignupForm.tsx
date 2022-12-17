@@ -1,7 +1,7 @@
+import Button from "@atoms/Button/Button";
+import Column from "@atoms/Column/Column";
+import TextInput from "@molecules/TextInput/TextInput";
 import { forwardRef, useImperativeHandle, useRef } from "react";
-import Button from "../../atoms/Button/Button";
-import Column from "../../atoms/Column/Column";
-import TextInput from "../../molecules/TextInput/TextInput";
 
 type SignupFormProps = {
   onSignupSubmit: (email: string, password: string) => void;

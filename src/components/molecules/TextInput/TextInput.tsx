@@ -1,6 +1,6 @@
+import Label from "@atoms/Label/Label";
+import TextField from "@atoms/TextField/TextField";
 import { forwardRef } from "react";
-import Label from "../../atoms/Label/Label";
-import TextField from "../../atoms/TextField/TextField";
 
 type Props = {
   type: string;

@@ -1,4 +1,4 @@
-import LoginTemplate from "../components/templates/LoginTemplate/LoginTemplate";
+import LoginTemplate from "@templates/LoginTemplate/LoginTemplate";
 
 function LoginPage() {
   const onLoginSubmit = (
@@ -6,6 +6,7 @@ function LoginPage() {
     password: string,
     rememberMe: boolean
   ) => {
+    // eslint-disable-next-line
     console.log({
       email,
       password,

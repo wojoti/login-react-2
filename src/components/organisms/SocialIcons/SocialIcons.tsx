@@ -1,6 +1,6 @@
-import { Icon, IconType } from "../../atoms/Icon/Icon";
-import Row from "../../atoms/Row/Row";
-import IconCircle from "../../molecules/IconCircle/IconCircle";
+import { Icon, IconType } from "@atoms/Icon/Icon";
+import Row from "@atoms/Row/Row";
+import IconCircle from "@molecules/IconCircle/IconCircle";
 
 function SocialIcons() {
   return (
