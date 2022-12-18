@@ -1,4 +1,4 @@
-import { Icon, IconType } from "@atoms/Icon/Icon";
+import Icon, { IconType } from "@atoms/Icon/Icon";
 import Row from "@atoms/Row/Row";
 import IconButton from "@molecules/IconButton/IconButton";
 import { useRef } from "react";

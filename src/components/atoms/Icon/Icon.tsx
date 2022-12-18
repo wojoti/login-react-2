@@ -13,6 +13,7 @@ interface Props {
   alt: string;
 }
 
-export function Icon({ src, width, height, alt }: Props) {
+function Icon({ src, width, height, alt }: Props) {
   return <StyledIcon src={src} width={width} height={height} alt={alt} />;
 }
+export default Icon;
