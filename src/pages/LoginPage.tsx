@@ -6,14 +6,20 @@ function LoginPage() {
     password: string,
     rememberMe: boolean
   ) => {
-    // eslint-disable-next-line
     console.log({
       email,
       password,
       rememberMe,
     });
   };
-  return <LoginTemplate onLoginSubmit={onLoginSubmit} />;
+
+  const onIconClick = (icon: string) => {
+    console.log({ icon });
+  };
+
+  return (
+    <LoginTemplate onLoginSubmit={onLoginSubmit} onIconClick={onIconClick} />
+  );
 }
 
 export default LoginPage;

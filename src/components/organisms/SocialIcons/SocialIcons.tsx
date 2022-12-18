@@ -1,19 +1,36 @@
 import { Icon, IconType } from "@atoms/Icon/Icon";
 import Row from "@atoms/Row/Row";
-import IconCircle from "@molecules/IconCircle/IconCircle";
+import IconButton from "@molecules/IconButton/IconButton";
+import { useRef } from "react";
 
-function SocialIcons() {
+type SocialIconsProps = {
+  onIconClick: (icon: string) => void;
+};
+
+function SocialIcons({ onIconClick }: SocialIconsProps) {
+  const googleRef = useRef<HTMLButtonElement>(null);
+  const facebookRef = useRef<HTMLButtonElement>(null);
+  const linkedinRef = useRef<HTMLButtonElement>(null);
+  const onClickG = () => {
+    onIconClick("google");
+  };
+  const onClickF = () => {
+    onIconClick("facebook");
+  };
+  const onClickL = () => {
+    onIconClick("linkedin");
+  };
   return (
     <Row justify="center">
-      <IconCircle color="#DE5246">
+      <IconButton color="#DE5246" ref={googleRef} onClick={onClickG}>
         <Icon src={IconType.google} width={13} height={13} alt="google" />
-      </IconCircle>
-      <IconCircle color="#1877f2">
+      </IconButton>
+      <IconButton color="#1877f2" ref={facebookRef} onClick={onClickF}>
         <Icon src={IconType.facebook} width={13} height={13} alt="facebook" />
-      </IconCircle>
-      <IconCircle color="#0077B5">
+      </IconButton>
+      <IconButton color="#0077B5" ref={linkedinRef} onClick={onClickL}>
         <Icon src={IconType.linkedin} width={13} height={13} alt="linkedin" />
-      </IconCircle>
+      </IconButton>
     </Row>
   );
 }

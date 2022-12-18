@@ -9,8 +9,11 @@ import SignupForm, { SignupFormHandle } from "@organisms/SignupForm/SignupForm";
 import SocialIcons from "@organisms/SocialIcons/SocialIcons";
 import { useEffect, useRef } from "react";
 
-type Props = { onSignupSubmit: (email: string, password: string) => void };
-function SignupTemplate({ onSignupSubmit }: Props) {
+type Props = {
+  onSignupSubmit: (email: string, password: string) => void;
+  onIconClick: (icon: string) => void;
+};
+function SignupTemplate({ onSignupSubmit, onIconClick }: Props) {
   const signupFormRef = useRef<SignupFormHandle>(null);
 
   useEffect(() => {
@@ -23,7 +26,7 @@ function SignupTemplate({ onSignupSubmit }: Props) {
       <Column mt={30} mb={35}>
         <Breakline>OR</Breakline>
       </Column>
-      <SocialIcons />
+      <SocialIcons onIconClick={onIconClick} />
       <Row justify="center" mt={28}>
         <Label color="rgb(107 114 128)">
           Already a user? <Link href="/">LOGIN</Link>

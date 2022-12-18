@@ -2,13 +2,17 @@ import SignupTemplate from "@templates/SignupTemplate/SignupTemplate";
 
 function SignupPage() {
   const onSignupSubmit = (email: string, password: string) => {
-    // eslint-disable-next-line
     console.log({
       email,
       password,
     });
   };
-  return <SignupTemplate onSignupSubmit={onSignupSubmit} />;
+  const onIconClick = (icon: string) => {
+    console.log({ icon });
+  };
+  return (
+    <SignupTemplate onSignupSubmit={onSignupSubmit} onIconClick={onIconClick} />
+  );
 }
 
 export default SignupPage;

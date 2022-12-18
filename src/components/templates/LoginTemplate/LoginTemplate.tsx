@@ -11,8 +11,9 @@ import { useEffect, useRef } from "react";
 
 type Props = {
   onLoginSubmit: (email: string, password: string, rememberMe: boolean) => void;
+  onIconClick: (icon: string) => void;
 };
-function LoginTemplate({ onLoginSubmit }: Props) {
+function LoginTemplate({ onLoginSubmit, onIconClick }: Props) {
   const loginFormRef = useRef<LoginFormHandle>(null);
 
   useEffect(() => {
@@ -26,7 +27,7 @@ function LoginTemplate({ onLoginSubmit }: Props) {
       <Column mt={30} mb={30}>
         <Breakline>OR</Breakline>
       </Column>
-      <SocialIcons />
+      <SocialIcons onIconClick={onIconClick} />
       <Row justify="center" mt={28}>
         <Label color="rgb(107 114 128)">
           Need an account? <Link href="/signup">SIGN UP</Link>
