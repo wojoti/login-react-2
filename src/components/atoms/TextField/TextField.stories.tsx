@@ -9,6 +9,13 @@ import TextField from "./TextField";
 export default {
   title: "Atoms/TextField",
   component: TextField,
+  decorators: [
+    (Story) => (
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Story />
+      </div>
+    ),
+  ],
 } as ComponentMeta<typeof TextField>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args

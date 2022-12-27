@@ -9,6 +9,13 @@ import Label from "./Label";
 export default {
   title: "Atoms/Label",
   component: Label,
+  decorators: [
+    (Story) => (
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Story />
+      </div>
+    ),
+  ],
 } as ComponentMeta<typeof Label>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args

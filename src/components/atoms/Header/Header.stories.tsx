@@ -9,6 +9,19 @@ import Header from "./Header";
 export default {
   title: "Atoms/Header",
   component: Header,
+  decorators: [
+    (Story) => (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          textAlign: "center",
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
 } as ComponentMeta<typeof Header>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args

@@ -9,6 +9,13 @@ import Icon, { IconType } from "./Icon";
 export default {
   title: "Atoms/Icon",
   component: Icon,
+  decorators: [
+    (Story) => (
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Story />
+      </div>
+    ),
+  ],
 } as ComponentMeta<typeof Icon>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args

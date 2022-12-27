@@ -9,6 +9,13 @@ import Checkbox from "./Checkbox";
 export default {
   title: "Atoms/Checkbox",
   component: Checkbox,
+  decorators: [
+    (Story) => (
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Story />
+      </div>
+    ),
+  ],
 } as ComponentMeta<typeof Checkbox>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args

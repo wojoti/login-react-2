@@ -9,6 +9,13 @@ import Link from "./Link";
 export default {
   title: "Atoms/Link",
   component: Link,
+  decorators: [
+    (Story) => (
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Story />
+      </div>
+    ),
+  ],
 } as ComponentMeta<typeof Link>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
