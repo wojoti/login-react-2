@@ -21,7 +21,6 @@ const Template: ComponentStory<typeof Link> = (args) => <Link {...args} />;
 export const Example = Template.bind({});
 Example.args = {
   decoration: "none",
-  href: "/",
   color: "rgb(107 114 128)",
   children: "Forgot Password?",
 };

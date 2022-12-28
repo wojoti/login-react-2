@@ -1,5 +1,4 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { MemoryRouter } from "react-router-dom";
 
 import LoginTemplate from "./LoginTemplate";
 
@@ -11,9 +10,7 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof LoginTemplate> = (args) => (
-  <MemoryRouter>
-    <LoginTemplate {...args} />
-  </MemoryRouter>
+  <LoginTemplate {...args} />
 );
 
 export const Default = Template.bind({});

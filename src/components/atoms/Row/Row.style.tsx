@@ -14,6 +14,13 @@ interface Props {
 }
 
 const Wrapper = styled.div<Props>`
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
   margin-top: ${(props) => props.mt || 0}px;
   margin-bottom: ${(props) => props.mb || 0}px;
   margin-left: ${(props) => props.ml || 0}px;

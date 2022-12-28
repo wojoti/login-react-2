@@ -2,6 +2,7 @@ import Column from "@components/atoms/Column/Column";
 import Container from "@components/atoms/Container/Container";
 import Header from "@components/atoms/Header/Header";
 import Label from "@components/atoms/Label/Label";
+import LinkB from "@components/atoms/Link/Link";
 import Row from "@components/atoms/Row/Row";
 import Breakline from "@components/molecules/Breakline/Breakline";
 import LoginForm, {
@@ -9,7 +10,6 @@ import LoginForm, {
 } from "@components/organisms/LoginForm/LoginForm";
 import SocialIcons from "@components/organisms/SocialIcons/SocialIcons";
 import { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
 
 type Props = {
   onLoginSubmit: (email: string, password: string, rememberMe: boolean) => void;
@@ -23,6 +23,10 @@ function LoginTemplate({ onLoginSubmit, onIconClick, onLinkClick }: Props) {
     loginFormRef.current?.focus();
   }, []);
 
+  const onClick = () => {
+    onLinkClick("/signup");
+  };
+
   return (
     <Container>
       <Header>LOGIN</Header>
@@ -33,8 +37,7 @@ function LoginTemplate({ onLoginSubmit, onIconClick, onLinkClick }: Props) {
       <SocialIcons onIconClick={onIconClick} />
       <Row justify="center" mt={28}>
         <Label color="rgb(107 114 128)">
-          {/* Need an account? <Link href="/signup">SIGN UP</Link> */}
-          Need an account? <Link to="/signup">SIGN UP</Link>
+          Need an account? <LinkB onClick={onClick}>SIGN UP</LinkB>
         </Label>
       </Row>
     </Container>

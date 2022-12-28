@@ -1,6 +1,6 @@
 import Button from "@components/atoms/Button/Button";
 import Column from "@components/atoms/Column/Column";
-import Link from "@components/atoms/Link/Link";
+import LinkB from "@components/atoms/Link/Link";
 import Row from "@components/atoms/Row/Row";
 import CheckboxArea from "@components/molecules/CheckboxArea/CheckboxArea";
 import TextInput from "@components/molecules/TextInput/TextInput";
@@ -64,14 +64,9 @@ const LoginForm = forwardRef<LoginFormHandle, LoginFormProps>(
         </Column>
 
         <Column align="flex-end">
-          <Link
-            decoration="none"
-            href="/"
-            color="rgb(107 114 128)"
-            onClick={onClick}
-          >
+          <LinkB decoration="none" color="rgb(107 114 128)" onClick={onClick}>
             Forgot Password?
-          </Link>
+          </LinkB>
         </Column>
       </>
     );
