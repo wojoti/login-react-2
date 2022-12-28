@@ -1,18 +1,26 @@
 import { forwardRef } from "react";
 import StyledButton from "./Button.style";
 
-interface Props {
+export interface ButtonProps {
   name: string;
   onClick: () => void;
+  testId?: string;
 }
 
 export type ButtonRef = HTMLButtonElement;
 
-const Button = forwardRef<ButtonRef, Props>(({ name, onClick }, ref) => (
-  <StyledButton type="submit" onClick={onClick} ref={ref}>
-    {name}
-  </StyledButton>
-));
+const Button = forwardRef<ButtonRef, ButtonProps>(
+  ({ name, onClick, testId }, ref) => (
+    <StyledButton
+      type="submit"
+      onClick={onClick}
+      data-testid={testId}
+      ref={ref}
+    >
+      {name}
+    </StyledButton>
+  )
+);
 Button.displayName = "Button";
 
 export default Button;

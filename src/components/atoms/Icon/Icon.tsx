@@ -6,14 +6,23 @@ export enum IconType {
   google = "./img/google.svg",
 }
 
-interface Props {
+export interface IconProps {
   src: IconType;
   width: number;
   height: number;
   alt: string;
+  testId?: string;
 }
 
-function Icon({ src, width, height, alt }: Props) {
-  return <StyledIcon src={src} width={width} height={height} alt={alt} />;
+function Icon({ src, width, height, alt, testId }: IconProps) {
+  return (
+    <StyledIcon
+      src={src}
+      width={width}
+      height={height}
+      alt={alt}
+      data-testid={testId}
+    />
+  );
 }
 export default Icon;

@@ -1,11 +1,12 @@
 import Wrapper from "./Container.style";
 
-interface Props {
+export interface ContainerProps {
   children?: React.ReactNode;
+  testId?: string;
 }
 
-function Container({ children }: Props) {
-  return <Wrapper>{children}</Wrapper>;
+function Container({ children, testId }: ContainerProps) {
+  return <Wrapper data-testid={testId}>{children}</Wrapper>;
 }
 
 export default Container;

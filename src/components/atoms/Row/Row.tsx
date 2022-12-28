@@ -1,6 +1,6 @@
 import Wrapper from "./Row.style";
 
-interface Props {
+export interface RowProps {
   children?: React.ReactNode;
   mt?: number;
   mb?: number;
@@ -24,6 +24,7 @@ interface Props {
     | "space-between"
     | "space-around"
     | "space-evenly";
+  testId?: string;
 }
 
 function Row({
@@ -37,8 +38,9 @@ function Row({
   pr,
   justify,
   align,
+  testId,
   children,
-}: Props) {
+}: RowProps) {
   return (
     <Wrapper
       mt={mt}
@@ -51,6 +53,7 @@ function Row({
       pr={pr}
       justify={justify}
       align={align}
+      data-testid={testId}
     >
       {children}
     </Wrapper>

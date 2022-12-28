@@ -1,6 +1,6 @@
 import Wrapper from "./Column.style";
 
-interface Props {
+export interface ColumnProps {
   children?: React.ReactNode;
   mt?: number;
   mb?: number;
@@ -24,6 +24,7 @@ interface Props {
     | "space-between"
     | "space-around"
     | "space-evenly";
+  testId?: string;
 }
 
 function Column({
@@ -37,8 +38,9 @@ function Column({
   pr,
   justify,
   align,
+  testId,
   children,
-}: Props) {
+}: ColumnProps) {
   return (
     <Wrapper
       mt={mt}
@@ -51,6 +53,7 @@ function Column({
       pr={pr}
       justify={justify}
       align={align}
+      data-testid={testId}
     >
       {children}
     </Wrapper>

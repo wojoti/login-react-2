@@ -1,11 +1,12 @@
 import StyledHeader from "./Header.style";
 
-interface Props {
+export interface HeaderProps {
   children?: React.ReactNode;
+  testId?: string;
 }
 
-function Header({ children }: Props) {
-  return <StyledHeader>{children}</StyledHeader>;
+function Header({ children, testId }: HeaderProps) {
+  return <StyledHeader data-testid={testId}>{children}</StyledHeader>;
 }
 
 export default Header;

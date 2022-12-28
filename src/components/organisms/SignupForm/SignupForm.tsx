@@ -40,7 +40,7 @@ const SignupForm = forwardRef<SignupFormHandle, SignupFormProps>(
           />
         </Column>
         <Column mt={15}>
-          <Button name="SIGN UP" onClick={onSubmit} />
+          <Button name="SIGN UP" onClick={onSubmit} testId="submit-button-id" />
         </Column>
       </>
     );

@@ -1,21 +1,25 @@
 import { forwardRef } from "react";
 import StyledTextField from "./TextField.style";
 
-interface Props {
+export interface TextFieldProps {
   type: string;
   name: string;
   id: string;
+  testId?: string;
 }
 export type TextFieldRef = HTMLInputElement;
 
-const TextField = forwardRef<TextFieldRef, Props>((props, ref) => (
-  <StyledTextField
-    type={props.type}
-    name={props.name}
-    id={props.id}
-    ref={ref}
-  />
-));
+const TextField = forwardRef<TextFieldRef, TextFieldProps>(
+  ({ type, name, id, testId }, ref) => (
+    <StyledTextField
+      type={type}
+      name={name}
+      id={id}
+      data-testid={testId}
+      ref={ref}
+    />
+  )
+);
 TextField.displayName = "TextField";
 
 export default TextField;

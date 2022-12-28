@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot 1`] = `
+<input
+  className="sc-bcXHqe jnPdKK"
+  data-testid="test-checkbox-id"
+  id="test-checkbox-id"
+  name="test checkbox"
+  type="checkbox"
+/>
+`;

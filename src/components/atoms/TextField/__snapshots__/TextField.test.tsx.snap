@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot 1`] = `
+<input
+  className="sc-bcXHqe eKEDvH"
+  data-testid="test-textfield-id"
+  id="email"
+  name="email"
+  type="email"
+/>
+`;

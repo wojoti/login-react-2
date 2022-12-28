@@ -60,7 +60,7 @@ const LoginForm = forwardRef<LoginFormHandle, LoginFormProps>(
           />
         </Row>
         <Column mt={15}>
-          <Button name="LOGIN" onClick={onSubmit} />
+          <Button name="LOGIN" onClick={onSubmit} testId="login-button-id" />
         </Column>
 
         <Column align="flex-end">
