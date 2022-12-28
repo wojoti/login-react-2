@@ -1,6 +1,8 @@
-import LoginTemplate from "@templates/LoginTemplate/LoginTemplate";
+import LoginTemplate from "@components/templates/LoginTemplate/LoginTemplate";
+import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
+  const navigate = useNavigate();
   const onLoginSubmit = (
     email: string,
     password: string,
@@ -17,8 +19,16 @@ function LoginPage() {
     console.log({ icon });
   };
 
+  const onLinkClick = (path: string) => {
+    navigate(path);
+  };
+
   return (
-    <LoginTemplate onLoginSubmit={onLoginSubmit} onIconClick={onIconClick} />
+    <LoginTemplate
+      onLoginSubmit={onLoginSubmit}
+      onIconClick={onIconClick}
+      onLinkClick={onLinkClick}
+    />
   );
 }
 

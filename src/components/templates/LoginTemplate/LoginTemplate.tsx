@@ -1,19 +1,22 @@
-import Column from "@atoms/Column/Column";
-import Container from "@atoms/Container/Container";
-import Header from "@atoms/Header/Header";
-import Label from "@atoms/Label/Label";
-import Row from "@atoms/Row/Row";
-import Breakline from "@molecules/Breakline/Breakline";
-import LoginForm, { LoginFormHandle } from "@organisms/LoginForm/LoginForm";
-import SocialIcons from "@organisms/SocialIcons/SocialIcons";
+import Column from "@components/atoms/Column/Column";
+import Container from "@components/atoms/Container/Container";
+import Header from "@components/atoms/Header/Header";
+import Label from "@components/atoms/Label/Label";
+import Row from "@components/atoms/Row/Row";
+import Breakline from "@components/molecules/Breakline/Breakline";
+import LoginForm, {
+  LoginFormHandle,
+} from "@components/organisms/LoginForm/LoginForm";
+import SocialIcons from "@components/organisms/SocialIcons/SocialIcons";
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 type Props = {
   onLoginSubmit: (email: string, password: string, rememberMe: boolean) => void;
   onIconClick: (icon: string) => void;
+  onLinkClick: (path: string) => void;
 };
-function LoginTemplate({ onLoginSubmit, onIconClick }: Props) {
+function LoginTemplate({ onLoginSubmit, onIconClick, onLinkClick }: Props) {
   const loginFormRef = useRef<LoginFormHandle>(null);
 
   useEffect(() => {
@@ -23,7 +26,7 @@ function LoginTemplate({ onLoginSubmit, onIconClick }: Props) {
   return (
     <Container>
       <Header>LOGIN</Header>
-      <LoginForm onLoginSubmit={onLoginSubmit} />
+      <LoginForm onLoginSubmit={onLoginSubmit} onLinkClick={onLinkClick} />
       <Column mt={30} mb={30}>
         <Breakline>OR</Breakline>
       </Column>

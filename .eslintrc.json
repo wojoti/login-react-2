@@ -13,6 +13,12 @@
   "overrides": [
     {
       "files": ["**/*.{ts,tsx,js,jsx}"]
+    },
+    {
+      "files": ["*.stories.tsx"],
+      "rules": {
+        "import/no-extraneous-dependencies": "off"
+      }
     }
   ],
   "parserOptions": {
@@ -22,7 +28,9 @@
   },
   "plugins": ["react", "prettier"],
   "rules": {
+    "react/jsx-props-no-spreading": "off",
     "react/require-default-props": "off",
+    "react/function-component-definition": "off",
     "prettier/prettier": [
       "error",
       {

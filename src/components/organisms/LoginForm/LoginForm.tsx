@@ -1,20 +1,21 @@
-import Button from "@atoms/Button/Button";
-import Column from "@atoms/Column/Column";
-import Link from "@atoms/Link/Link";
-import Row from "@atoms/Row/Row";
-import CheckboxArea from "@molecules/CheckboxArea/CheckboxArea";
-import TextInput from "@molecules/TextInput/TextInput";
+import Button from "@components/atoms/Button/Button";
+import Column from "@components/atoms/Column/Column";
+import Link from "@components/atoms/Link/Link";
+import Row from "@components/atoms/Row/Row";
+import CheckboxArea from "@components/molecules/CheckboxArea/CheckboxArea";
+import TextInput from "@components/molecules/TextInput/TextInput";
 import { forwardRef, useImperativeHandle, useRef } from "react";
 
 type LoginFormProps = {
   onLoginSubmit: (email: string, password: string, rememberMe: boolean) => void;
+  onLinkClick: (path: string) => void;
 };
 
 export type LoginFormHandle = {
   focus: () => void;
 };
 const LoginForm = forwardRef<LoginFormHandle, LoginFormProps>(
-  ({ onLoginSubmit }, ref) => {
+  ({ onLoginSubmit, onLinkClick }, ref) => {
     const emailRef = useRef<HTMLInputElement>(null);
     const passwordRef = useRef<HTMLInputElement>(null);
     const rememberRef = useRef<HTMLInputElement>(null);
@@ -33,6 +34,9 @@ const LoginForm = forwardRef<LoginFormHandle, LoginFormProps>(
         passwordRef.current!.value,
         rememberRef.current!.checked
       );
+    };
+    const onClick = () => {
+      onLinkClick("/signup");
     };
     return (
       <>
@@ -60,7 +64,12 @@ const LoginForm = forwardRef<LoginFormHandle, LoginFormProps>(
         </Column>
 
         <Column align="flex-end">
-          <Link decoration="none" href="/" color="rgb(107 114 128)">
+          <Link
+            decoration="none"
+            href="/"
+            color="rgb(107 114 128)"
+            onClick={onClick}
+          >
             Forgot Password?
           </Link>
         </Column>

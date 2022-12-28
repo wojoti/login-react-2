@@ -1,11 +1,13 @@
-import Column from "@atoms/Column/Column";
-import Container from "@atoms/Container/Container";
-import Header from "@atoms/Header/Header";
-import Label from "@atoms/Label/Label";
-import Row from "@atoms/Row/Row";
-import Breakline from "@molecules/Breakline/Breakline";
-import SignupForm, { SignupFormHandle } from "@organisms/SignupForm/SignupForm";
-import SocialIcons from "@organisms/SocialIcons/SocialIcons";
+import Column from "@components/atoms/Column/Column";
+import Container from "@components/atoms/Container/Container";
+import Header from "@components/atoms/Header/Header";
+import Label from "@components/atoms/Label/Label";
+import Row from "@components/atoms/Row/Row";
+import Breakline from "@components/molecules/Breakline/Breakline";
+import SignupForm, {
+  SignupFormHandle,
+} from "@components/organisms/SignupForm/SignupForm";
+import SocialIcons from "@components/organisms/SocialIcons/SocialIcons";
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 

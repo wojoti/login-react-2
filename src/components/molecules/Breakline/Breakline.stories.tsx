@@ -1,6 +1,3 @@
-/* eslint-disable react/function-component-definition */
-/* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable import/no-extraneous-dependencies */
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import Breakline from "./Breakline";

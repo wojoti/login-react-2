@@ -1,6 +1,6 @@
-import Button from "@atoms/Button/Button";
-import Column from "@atoms/Column/Column";
-import TextInput from "@molecules/TextInput/TextInput";
+import Button from "@components/atoms/Button/Button";
+import Column from "@components/atoms/Column/Column";
+import TextInput from "@components/molecules/TextInput/TextInput";
 import { forwardRef, useImperativeHandle, useRef } from "react";
 
 type SignupFormProps = {

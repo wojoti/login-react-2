@@ -1,4 +1,4 @@
-import SignupTemplate from "@templates/SignupTemplate/SignupTemplate";
+import SignupTemplate from "@components/templates/SignupTemplate/SignupTemplate";
 
 function SignupPage() {
   const onSignupSubmit = (email: string, password: string) => {

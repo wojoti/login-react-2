@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import Button from "./Button";
@@ -10,7 +9,6 @@ export default {
 } as ComponentMeta<typeof Button>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-// eslint-disable-next-line react/jsx-props-no-spreading, react/function-component-definition
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Login = Template.bind({});

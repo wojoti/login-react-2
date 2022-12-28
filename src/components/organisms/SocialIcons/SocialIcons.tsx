@@ -1,6 +1,6 @@
-import Icon, { IconType } from "@atoms/Icon/Icon";
-import Row from "@atoms/Row/Row";
-import IconButton from "@molecules/IconButton/IconButton";
+import Icon, { IconType } from "@components/atoms/Icon/Icon";
+import Row from "@components/atoms/Row/Row";
+import IconButton from "@components/molecules/IconButton/IconButton";
 import { useRef } from "react";
 
 type SocialIconsProps = {

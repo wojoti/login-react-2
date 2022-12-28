@@ -1,7 +1,4 @@
-/* eslint-disable react/function-component-definition */
-/* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable import/no-extraneous-dependencies */
-import Icon, { IconType } from "@atoms/Icon/Icon";
+import Icon, { IconType } from "@components/atoms/Icon/Icon";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import IconButton from "./IconButton";
