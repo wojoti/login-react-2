@@ -1,10 +1,6 @@
-import { cleanup, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import TestRenderer from "react-test-renderer";
 import Column, { ColumnProps } from "./Column";
-
-afterEach(() => {
-  cleanup();
-});
 
 const props: ColumnProps = {
   testId: "test-column-id",
@@ -24,6 +20,15 @@ test("should render column", () => {
   render(<Column {...props} />);
   const columnElement = screen.getByTestId("test-column-id");
   expect(columnElement).toBeInTheDocument();
+});
+
+test.todo("todo: create test here - inserted here just for example");
+
+test("should render column with default style", () => {
+  render(<Column {...props} />);
+  const columnElement = screen.getByTestId("test-column-id");
+  expect(columnElement).toBeInTheDocument();
+  expect(columnElement).toHaveStyle("margin-top: 0px");
 });
 
 test("should render column with modified style through props", () => {

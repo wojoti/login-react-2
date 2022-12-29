@@ -1,11 +1,7 @@
-import { cleanup, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import TestRenderer from "react-test-renderer";
 import TextField, { TextFieldProps } from "./TextField";
-
-afterEach(() => {
-  cleanup();
-});
 
 const props: TextFieldProps = {
   type: "email",

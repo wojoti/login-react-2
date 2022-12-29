@@ -1,10 +1,6 @@
-import { cleanup, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import TestRenderer from "react-test-renderer";
 import Icon, { IconProps, IconType } from "./Icon";
-
-afterEach(() => {
-  cleanup();
-});
 
 const props: IconProps = {
   src: IconType.facebook,

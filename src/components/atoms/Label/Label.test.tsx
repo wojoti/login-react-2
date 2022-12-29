@@ -1,10 +1,6 @@
-import { cleanup, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import TestRenderer from "react-test-renderer";
 import Label, { LabelProps } from "./Label";
-
-afterEach(() => {
-  cleanup();
-});
 
 const props: LabelProps = {
   testId: "test-label-id",

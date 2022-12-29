@@ -1,10 +1,6 @@
-import { cleanup, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import TestRenderer from "react-test-renderer";
 import Container, { ContainerProps } from "./Container";
-
-afterEach(() => {
-  cleanup();
-});
 
 const props: ContainerProps = {
   testId: "test-container-id",

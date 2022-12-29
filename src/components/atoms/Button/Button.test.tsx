@@ -1,14 +1,11 @@
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import TestRenderer from "react-test-renderer";
 import Button, { ButtonProps } from "./Button";
 
-afterEach(() => {
-  cleanup();
-});
-
+const handleClick = jest.fn();
 const props: ButtonProps = {
   name: "test button",
-  onClick: () => {},
+  onClick: handleClick,
   testId: "test-button-id",
 };
 
@@ -25,8 +22,7 @@ test("should render matching button with text", () => {
 });
 
 test("should handle onClick event", () => {
-  const handleClick = jest.fn();
-  render(<Button {...props} onClick={handleClick} />);
+  render(<Button {...props} />);
   const buttonElement = screen.getByTestId("test-button-id");
   fireEvent.click(buttonElement);
   expect(handleClick).toHaveBeenCalledTimes(1);

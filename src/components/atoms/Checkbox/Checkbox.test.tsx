@@ -1,10 +1,6 @@
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import TestRenderer from "react-test-renderer";
 import Checkbox, { CheckboxProps } from "./Checkbox";
-
-afterEach(() => {
-  cleanup();
-});
 
 const props: CheckboxProps = {
   name: "test checkbox",

@@ -1,10 +1,6 @@
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import TestRenderer from "react-test-renderer";
 import Link, { LinkProps } from "./Link";
-
-afterEach(() => {
-  cleanup();
-});
 
 const props: LinkProps = {
   children: "test link",

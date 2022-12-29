@@ -1,10 +1,6 @@
-import { cleanup, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import TestRenderer from "react-test-renderer";
 import Row, { RowProps } from "./Row";
-
-afterEach(() => {
-  cleanup();
-});
 
 const props: RowProps = {
   testId: "test-row-id",

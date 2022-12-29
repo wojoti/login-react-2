@@ -1,10 +1,6 @@
-import { cleanup, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import TestRenderer from "react-test-renderer";
 import Header, { HeaderProps } from "./Header";
-
-afterEach(() => {
-  cleanup();
-});
 
 const props: HeaderProps = {
   testId: "test-header-id",
