@@ -13,8 +13,15 @@ const Template: ComponentStory<typeof TextInput> = (args) => (
   <TextInput {...args} />
 );
 
-export const Email = Template.bind({});
-Email.args = { type: "email", name: "Email", id: "email" };
+export const ValidEmail = Template.bind({});
+ValidEmail.args = { type: "email", name: "email", id: "email", isValid: true };
+export const InvalidEmail = Template.bind({});
+InvalidEmail.args = {
+  type: "email",
+  name: "email",
+  id: "email",
+  isValid: false,
+};
 
 export const Password = Template.bind({});
-Password.args = { type: "password", name: "Password", id: "password" };
+Password.args = { type: "password", name: "password", id: "password" };

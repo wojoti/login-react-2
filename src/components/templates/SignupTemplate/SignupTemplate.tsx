@@ -36,7 +36,6 @@ function SignupTemplate({ onSignupSubmit, onIconClick, onLinkClick }: Props) {
       <SocialIcons onIconClick={onIconClick} />
       <Row justify="center" mt={28}>
         <Label color="rgb(107 114 128)">
-          {/* Already a user? <Link href="/">LOGIN</Link> */}
           Already a user? <LinkB onClick={onClick}>LOGIN</LinkB>
         </Label>
       </Row>

@@ -14,9 +14,11 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 export const Login = Template.bind({});
 Login.args = {
   name: "LOGIN",
+  disabled: false,
 };
 
 export const SignUp = Template.bind({});
 SignUp.args = {
   name: "SIGN UP",
+  disabled: true,
 };

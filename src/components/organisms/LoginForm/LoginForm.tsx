@@ -4,7 +4,14 @@ import LinkB from "@components/atoms/Link/Link";
 import Row from "@components/atoms/Row/Row";
 import CheckboxArea from "@components/molecules/CheckboxArea/CheckboxArea";
 import TextInput from "@components/molecules/TextInput/TextInput";
-import { forwardRef, useImperativeHandle, useRef } from "react";
+import {
+  forwardRef,
+  SyntheticEvent,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from "react";
 
 type LoginFormProps = {
   onLoginSubmit: (email: string, password: string, rememberMe: boolean) => void;
@@ -19,6 +26,11 @@ const LoginForm = forwardRef<LoginFormHandle, LoginFormProps>(
     const emailRef = useRef<HTMLInputElement>(null);
     const passwordRef = useRef<HTMLInputElement>(null);
     const rememberRef = useRef<HTMLInputElement>(null);
+
+    const [email, setEmail] = useState("");
+    const [emailRegex, setEmailRegex] = useState(true);
+    const [password, setPassword] = useState("");
+    const [buttonDisabled, setButtonDisabled] = useState(false);
     useImperativeHandle(
       ref,
       () => ({
@@ -38,16 +50,42 @@ const LoginForm = forwardRef<LoginFormHandle, LoginFormProps>(
     const onClick = () => {
       onLinkClick("/signup");
     };
+    const onEmailChange = (event: SyntheticEvent<HTMLInputElement>) => {
+      setEmail(event.currentTarget.value);
+      setEmailRegex(
+        !!(
+          /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(
+            event.currentTarget.value
+          ) || event.currentTarget.value.length === 0
+        )
+      );
+    };
+    const onPasswordChange = (event: SyntheticEvent<HTMLInputElement>) => {
+      setPassword(event.currentTarget.value);
+    };
+
+    useEffect(() => {
+      setButtonDisabled(!!(email === "" || password === "" || !emailRegex));
+    }, [email, password, emailRegex]);
+
     return (
       <>
         <Column mt={15}>
-          <TextInput type="email" name="Email" id="email" ref={emailRef} />
+          <TextInput
+            type="email"
+            name="Email"
+            id="email"
+            onChange={onEmailChange}
+            isValid={emailRegex}
+            ref={emailRef}
+          />
         </Column>
         <Column mt={15}>
           <TextInput
             type="password"
             name="Password"
             id="password"
+            onChange={onPasswordChange}
             ref={passwordRef}
           />
         </Column>
@@ -60,7 +98,12 @@ const LoginForm = forwardRef<LoginFormHandle, LoginFormProps>(
           />
         </Row>
         <Column mt={15}>
-          <Button name="LOGIN" onClick={onSubmit} testId="login-button-id" />
+          <Button
+            name="LOGIN"
+            onClick={onSubmit}
+            testId="login-button-id"
+            disabled={buttonDisabled}
+          />
         </Column>
 
         <Column align="flex-end">

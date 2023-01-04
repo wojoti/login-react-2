@@ -2,7 +2,7 @@
 
 exports[`should match snapshot 1`] = `
 <input
-  className="sc-bcXHqe eKEDvH"
+  className="sc-bcXHqe cCemeS"
   data-testid="test-textfield-id"
   id="email"
   name="email"
