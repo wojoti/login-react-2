@@ -16,8 +16,7 @@ const StyledTextField = styled.input<Props>`
 
   width: 100%;
   height: 32px;
-  border: 2px solid
-    ${(props) => (props.isValid ? "#e5e7eb" : "rgb(244 63 94)") || "#e5e7eb"};
+  border: 2px solid ${(props) => (props.isValid ? "#e5e7eb" : "rgb(244 63 94)")};
   border-radius: 5px;
   padding-left: 10px;
 `;

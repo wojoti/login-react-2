@@ -1,4 +1,4 @@
-import Button from "@components/atoms/Button/Button";
+import { Button } from "@components/atoms";
 import Column from "@components/atoms/Column/Column";
 import LinkB from "@components/atoms/Link/Link";
 import Row from "@components/atoms/Row/Row";

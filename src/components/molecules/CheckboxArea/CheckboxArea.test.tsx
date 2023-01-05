@@ -39,7 +39,7 @@ test("should render checkboxarea with certain checkbox id", () => {
   );
   expect(checkboxareaCheckboxElement).toBeInTheDocument();
   expect(checkboxareaCheckboxElement).toHaveAttribute(
-    "name",
-    "name checkboxarea"
+    "id",
+    "test-checkboxarea"
   );
 });
