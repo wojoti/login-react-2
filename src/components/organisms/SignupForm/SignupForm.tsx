@@ -9,16 +9,18 @@ import {
   useRef,
   useState,
 } from "react";
+import Wrapper from "./SignupForm.style";
 
-type SignupFormProps = {
+export interface SignupFormProps {
   onSignupSubmit: (email: string, password: string) => void;
-};
+  testId?: string;
+}
 
 export type SignupFormHandle = {
   focus: () => void;
 };
 const SignupForm = forwardRef<SignupFormHandle, SignupFormProps>(
-  ({ onSignupSubmit }, ref) => {
+  ({ onSignupSubmit, testId }, ref) => {
     const emailRef = useRef<HTMLInputElement>(null);
     const passwordRef = useRef<HTMLInputElement>(null);
 
@@ -57,7 +59,7 @@ const SignupForm = forwardRef<SignupFormHandle, SignupFormProps>(
     }, [email, password, emailRegex]);
 
     return (
-      <>
+      <Wrapper data-testid={testId}>
         <Column mt={15}>
           <TextInput
             type="email"
@@ -65,6 +67,7 @@ const SignupForm = forwardRef<SignupFormHandle, SignupFormProps>(
             id="email"
             onChange={onEmailChange}
             isValid={emailRegex}
+            testId="signupform-textinput-login"
             ref={emailRef}
           />
         </Column>
@@ -74,6 +77,7 @@ const SignupForm = forwardRef<SignupFormHandle, SignupFormProps>(
             name="Password"
             id="password"
             onChange={onPasswordChange}
+            testId="signupform-textinput-password"
             ref={passwordRef}
           />
         </Column>
@@ -81,11 +85,11 @@ const SignupForm = forwardRef<SignupFormHandle, SignupFormProps>(
           <Button
             name="SIGN UP"
             onClick={onSubmit}
-            testId="submit-button-id"
+            testId="signup-button-id"
             disabled={buttonDisabled}
           />
         </Column>
-      </>
+      </Wrapper>
     );
   }
 );

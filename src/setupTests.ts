@@ -4,6 +4,8 @@
 // learn more: https://github.com/testing-library/jest-dom
 import "@testing-library/jest-dom";
 import { cleanup } from "@testing-library/react";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import "jest-styled-components";
 
 afterEach(() => {
   cleanup();

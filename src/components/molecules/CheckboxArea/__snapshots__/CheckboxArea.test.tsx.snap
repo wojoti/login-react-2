@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot 1`] = `
+.c1 {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-right: 10px;
+  accent-color: #f43f5e;
+  width: 1rem;
+  height: 1rem;
+}
+
+.c2 {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: inherit;
+  font-size: 14px;
+}
+
+.c0 {
+  width: 100%;
+}
+
+<div
+  className="c0"
+  data-testid="test-checkboxarea-id"
+>
+  <input
+    className="c1"
+    data-testid="checkboxarea-checkbox"
+    id="test-checkboxarea"
+    name="name checkboxarea"
+    type="checkbox"
+  />
+  <span
+    className="c2"
+    data-testid="checkboxarea-label"
+  >
+    label checkboxarea
+  </span>
+</div>
+`;

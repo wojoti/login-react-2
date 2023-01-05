@@ -1,12 +1,13 @@
 import * as Styles from "./Breakline.style";
 
-interface Props {
+export interface BreaklineProps {
   children?: string;
+  testId?: string;
 }
 
-function Breakline({ children }: Props) {
+function Breakline({ children, testId }: BreaklineProps) {
   return (
-    <Styles.MaxWidthDiv>
+    <Styles.MaxWidthDiv data-testid={testId}>
       <Styles.GreyLineDiv>
         <Styles.RelativeDiv>
           <Styles.StyledText>{children}</Styles.StyledText>

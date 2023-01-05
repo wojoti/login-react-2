@@ -12,17 +12,19 @@ import {
   useRef,
   useState,
 } from "react";
+import Wrapper from "./LoginForm.style";
 
-type LoginFormProps = {
+export interface LoginFormProps {
   onLoginSubmit: (email: string, password: string, rememberMe: boolean) => void;
   onLinkClick: (path: string) => void;
-};
+  testId?: string;
+}
 
 export type LoginFormHandle = {
   focus: () => void;
 };
 const LoginForm = forwardRef<LoginFormHandle, LoginFormProps>(
-  ({ onLoginSubmit, onLinkClick }, ref) => {
+  ({ onLoginSubmit, onLinkClick, testId }, ref) => {
     const emailRef = useRef<HTMLInputElement>(null);
     const passwordRef = useRef<HTMLInputElement>(null);
     const rememberRef = useRef<HTMLInputElement>(null);
@@ -69,7 +71,7 @@ const LoginForm = forwardRef<LoginFormHandle, LoginFormProps>(
     }, [email, password, emailRegex]);
 
     return (
-      <>
+      <Wrapper data-testid={testId}>
         <Column mt={15}>
           <TextInput
             type="email"
@@ -77,6 +79,7 @@ const LoginForm = forwardRef<LoginFormHandle, LoginFormProps>(
             id="email"
             onChange={onEmailChange}
             isValid={emailRegex}
+            testId="loginform-textinput-login"
             ref={emailRef}
           />
         </Column>
@@ -86,6 +89,7 @@ const LoginForm = forwardRef<LoginFormHandle, LoginFormProps>(
             name="Password"
             id="password"
             onChange={onPasswordChange}
+            testId="loginform-textinput-password"
             ref={passwordRef}
           />
         </Column>
@@ -94,6 +98,7 @@ const LoginForm = forwardRef<LoginFormHandle, LoginFormProps>(
             name="remember"
             id="remember"
             label="Remember Me?"
+            testId="loginform-CheckboxArea"
             ref={rememberRef}
           />
         </Row>
@@ -107,11 +112,16 @@ const LoginForm = forwardRef<LoginFormHandle, LoginFormProps>(
         </Column>
 
         <Column align="flex-end">
-          <LinkB decoration="none" color="rgb(107 114 128)" onClick={onClick}>
+          <LinkB
+            decoration="none"
+            color="rgb(107 114 128)"
+            onClick={onClick}
+            testId="loginform-link"
+          >
             Forgot Password?
           </LinkB>
         </Column>
-      </>
+      </Wrapper>
     );
   }
 );

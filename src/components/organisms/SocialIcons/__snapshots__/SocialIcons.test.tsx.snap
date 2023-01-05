@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot 1`] = `
+.c2 {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 13px;
+  height: 13px;
+}
+
+.c0 {
+  box-sizing: border-box;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+}
+
+.c1 {
+  box-sizing: border-box;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  border: 2px solid black;
+  border-radius: 45px;
+  padding: 3px 5px;
+  border-color: #DE5246;
+  background-color: white;
+  margin: 0px 10px;
+  cursor: pointer;
+}
+
+.c3 {
+  box-sizing: border-box;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  border: 2px solid black;
+  border-radius: 45px;
+  padding: 3px 5px;
+  border-color: #1877f2;
+  background-color: white;
+  margin: 0px 10px;
+  cursor: pointer;
+}
+
+.c4 {
+  box-sizing: border-box;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  border: 2px solid black;
+  border-radius: 45px;
+  padding: 3px 5px;
+  border-color: #0077B5;
+  background-color: white;
+  margin: 0px 10px;
+  cursor: pointer;
+}
+
+<div
+  className="c0"
+  data-testid="test-socialicons-id"
+>
+  <button
+    className="c1"
+    data-testid="iconbutton-g"
+    onClick={[Function]}
+  >
+    <img
+      alt="google"
+      className="c2"
+      data-testid="icon-g"
+      height={13}
+      src="./img/google.svg"
+      width={13}
+    />
+  </button>
+  <button
+    className="c3"
+    data-testid="iconbutton-fb"
+    onClick={[Function]}
+  >
+    <img
+      alt="facebook"
+      className="c2"
+      data-testid="icon-fb"
+      height={13}
+      src="./img/facebook.svg"
+      width={13}
+    />
+  </button>
+  <button
+    className="c4"
+    data-testid="iconbutton-l"
+    onClick={[Function]}
+  >
+    <img
+      alt="linkedin"
+      className="c2"
+      data-testid="icon-l"
+      height={13}
+      src="./img/linkedin.svg"
+      width={13}
+    />
+  </button>
+</div>
+`;

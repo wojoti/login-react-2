@@ -26,17 +26,22 @@ test("should render textfield", () => {
   expect(textfieldElement).toBeInTheDocument();
 });
 
-test("should handle text change", () => {
-  render(<TextField {...props} />);
+test("should handle text change with onChange", () => {
+  const handleChange = jest.fn();
+  render(<TextField {...props} onChange={handleChange} />);
   const textfieldElement = screen.getByTestId("test-textfield-id");
   expect(textfieldElement).toBeInTheDocument();
   userEvent.type(textfieldElement, "test1234");
   expect(textfieldElement).toHaveProperty("value", "test1234");
+  expect(handleChange).toHaveBeenCalledTimes(8);
 });
 
 test("should render textfield with red border when invalid (eg. regex)", () => {
   render(<TextField {...modifiedProps} />);
   const textfieldElement = screen.getByTestId("test-textfield-id");
   expect(textfieldElement).toBeInTheDocument();
-  expect(textfieldElement).toHaveStyle("border: 2px solid rgb(244 63 94)");
+  expect(textfieldElement).toHaveStyleRule(
+    "border",
+    "2px solid rgb(244 63 94)"
+  );
 });

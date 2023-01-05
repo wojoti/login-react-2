@@ -1,16 +1,17 @@
 import { forwardRef, ReactNode } from "react";
 import Wrapper from "./IconButton.style";
 
-interface Props {
+export interface IconButtonProps {
   children: ReactNode;
   color?: string;
   onClick: () => void;
+  testId?: string;
 }
 export type IconButtonRef = HTMLButtonElement;
 
-const IconButton = forwardRef<IconButtonRef, Props>(
-  ({ children, color, onClick }, ref) => (
-    <Wrapper accent={color} onClick={onClick} ref={ref}>
+const IconButton = forwardRef<IconButtonRef, IconButtonProps>(
+  ({ children, color, onClick, testId }, ref) => (
+    <Wrapper accent={color} onClick={onClick} data-testid={testId} ref={ref}>
       {children}
     </Wrapper>
   )

@@ -22,8 +22,6 @@ test("should render column", () => {
   expect(columnElement).toBeInTheDocument();
 });
 
-test.todo("todo: create test here - inserted here just for example");
-
 test("should render column with default style", () => {
   render(<Column {...props} />);
   const columnElement = screen.getByTestId("test-column-id");

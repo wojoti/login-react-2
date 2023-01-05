@@ -49,6 +49,22 @@
       }
     ]
   },
+  "jest": {
+    "moduleNameMapper": {
+      "@components/(.*)": [
+        "<rootDir>/src/components/$1"
+      ],
+      "@pages/(.*)": [
+        "<rootDir>/src/pages/$1"
+      ],
+      "@stories/(.*)": [
+        "<rootDir>/src/stories/$1"
+      ],
+      "@/(.*)": [
+        "<rootDir>/src/$1"
+      ]
+    }
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -92,6 +108,7 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-storybook": "^0.6.8",
+    "jest-styled-components": "^7.1.1",
     "prettier": "^2.8.0",
     "prettier-plugin-organize-imports": "^3.2.1",
     "prop-types": "^15.8.1",
