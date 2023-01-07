@@ -29,7 +29,7 @@ function SignupTemplate({ onSignupSubmit, onIconClick, onLinkClick }: Props) {
   return (
     <Container>
       <Header>SIGN UP</Header>
-      <SignupForm onSignupSubmit={onSignupSubmit} />
+      <SignupForm onSignupSubmit={onSignupSubmit} ref={signupFormRef} />
       <Column mt={30} mb={35}>
         <Breakline>OR</Breakline>
       </Column>

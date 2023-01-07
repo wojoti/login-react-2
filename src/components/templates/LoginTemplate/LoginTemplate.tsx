@@ -20,7 +20,7 @@ function LoginTemplate({ onLoginSubmit, onIconClick, onLinkClick }: Props) {
   const loginFormRef = useRef<LoginFormHandle>(null);
 
   useEffect(() => {
-    loginFormRef.current?.focus();
+    loginFormRef.current!.focus();
   }, []);
 
   const onClick = () => {
@@ -30,7 +30,11 @@ function LoginTemplate({ onLoginSubmit, onIconClick, onLinkClick }: Props) {
   return (
     <Container>
       <Header>LOGIN</Header>
-      <LoginForm onLoginSubmit={onLoginSubmit} onLinkClick={onLinkClick} />
+      <LoginForm
+        onLoginSubmit={onLoginSubmit}
+        onLinkClick={onLinkClick}
+        ref={loginFormRef}
+      />
       <Column mt={30} mb={30}>
         <Breakline>OR</Breakline>
       </Column>
