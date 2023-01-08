@@ -156,3 +156,40 @@ test("should render signupform with disabled button - password filled", () => {
   expect(signupformButtonElement).toBeInTheDocument();
   expect(signupformButtonElement).toBeDisabled();
 });
+test("should render email textfield with red border when invalid (eg. regex)", () => {
+  render(<SignupForm {...props} />);
+  const signupformElement = screen.getByTestId("test-signupform-id");
+  expect(signupformElement).toBeInTheDocument();
+  const signupformLoginElement = screen.getByTestId(
+    "signupform-textinput-login"
+  );
+  expect(signupformLoginElement).toBeInTheDocument();
+  const textfieldLoginElement = within(signupformLoginElement).getByTestId(
+    "textinput-textfield"
+  );
+  expect(textfieldLoginElement).toBeInTheDocument();
+  userEvent.type(textfieldLoginElement, "t");
+  expect(textfieldLoginElement).toHaveStyleRule(
+    "border",
+    "2px solid rgb(244 63 94)"
+  );
+});
+
+test("should not render password textfield with red border when invalid'", () => {
+  render(<SignupForm {...props} />);
+  const signupformElement = screen.getByTestId("test-signupform-id");
+  expect(signupformElement).toBeInTheDocument();
+  const signupformLoginElement = screen.getByTestId(
+    "signupform-textinput-password"
+  );
+  expect(signupformLoginElement).toBeInTheDocument();
+  const textfieldLoginElement = within(signupformLoginElement).getByTestId(
+    "textinput-textfield"
+  );
+  expect(textfieldLoginElement).toBeInTheDocument();
+  userEvent.type(textfieldLoginElement, "t");
+  expect(textfieldLoginElement).not.toHaveStyleRule(
+    "border",
+    "2px solid rgb(244 63 94)"
+  );
+});

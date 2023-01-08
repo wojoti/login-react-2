@@ -33,10 +33,11 @@ test("should handle clicks", () => {
 
   fireEvent.click(googleElement);
   expect(handleClick).toHaveBeenCalledTimes(1);
-
+  expect(handleClick).lastCalledWith("google");
   fireEvent.click(facebookElement);
   expect(handleClick).toHaveBeenCalledTimes(2);
-
+  expect(handleClick).lastCalledWith("facebook");
   fireEvent.click(linkedinElement);
   expect(handleClick).toHaveBeenCalledTimes(3);
+  expect(handleClick).lastCalledWith("linkedin");
 });

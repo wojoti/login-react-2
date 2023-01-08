@@ -1,4 +1,4 @@
-import { render, screen, within } from "@testing-library/react";
+import { fireEvent, render, screen, within } from "@testing-library/react";
 import TestRenderer from "react-test-renderer";
 import CheckboxArea, { CheckboxAreaProps } from "./CheckboxArea";
 
@@ -42,4 +42,26 @@ test("should render checkboxarea with certain checkbox id", () => {
     "id",
     "test-checkboxarea"
   );
+});
+test("should render checkboxarea with checkbox unchecked by default", () => {
+  render(<CheckboxArea {...props} />);
+  const checkboxareaElement = screen.getByTestId("test-checkboxarea-id");
+  expect(checkboxareaElement).toBeInTheDocument();
+  const checkboxareaCheckboxElement = within(checkboxareaElement).getByTestId(
+    "checkboxarea-checkbox"
+  );
+  expect(checkboxareaCheckboxElement).toBeInTheDocument();
+  expect(checkboxareaCheckboxElement).not.toBeChecked();
+});
+
+test("should switch checkbox status after click", () => {
+  render(<CheckboxArea {...props} />);
+  const checkboxareaElement = screen.getByTestId("test-checkboxarea-id");
+  expect(checkboxareaElement).toBeInTheDocument();
+  const checkboxareaCheckboxElement = within(checkboxareaElement).getByTestId(
+    "checkboxarea-checkbox"
+  );
+  expect(checkboxareaCheckboxElement).toBeInTheDocument();
+  fireEvent.click(checkboxareaCheckboxElement);
+  expect(checkboxareaCheckboxElement).toBeChecked();
 });

@@ -1,0 +1,639 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot 1`] = `
+.c10 {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: 32px;
+  border-radius: 6px;
+  border: 0px solid black;
+  background-color: rgb(244 63 94);
+  background-color: rgb(244 63 94);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+.c9 {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-right: 10px;
+  accent-color: #f43f5e;
+  width: 1rem;
+  height: 1rem;
+}
+
+.c3 {
+  box-sizing: border-box;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-top: 15px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c11 {
+  box-sizing: border-box;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+}
+
+.c13 {
+  box-sizing: border-box;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c0 {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  background-color: rgb(255 255 255);
+  border-style: solid;
+  border-width: 0rem;
+  border-radius: 0.5rem;
+  width: 20rem;
+  height: 450px;
+}
+
+.c1 {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 100%;
+}
+
+.c20 {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 13px;
+  height: 13px;
+}
+
+.c5 {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: inherit;
+  font-size: 14px;
+}
+
+.c24 {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: rgb(107 114 128);
+  font-size: 14px;
+}
+
+.c12 {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: rgb(107 114 128);
+  font-size: 14px;
+  background: none !important;
+  border: none;
+  padding: 0 !important;
+  cursor: pointer;
+}
+
+.c25 {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  color: inherit;
+  font-size: 14px;
+  background: none !important;
+  border: none;
+  padding: 0 !important;
+  cursor: pointer;
+}
+
+.c7 {
+  box-sizing: border-box;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c18 {
+  box-sizing: border-box;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+}
+
+.c23 {
+  box-sizing: border-box;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-top: 28px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+}
+
+.c6 {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: 32px;
+  border: 2px solid #e5e7eb;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+.c14 {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+}
+
+.c15 {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 2px;
+  width: 100%;
+  background-color: rgb(229 231 235);
+}
+
+.c16 {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+.c17 {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  border: 1px solid rgb(156 163 175);
+  border-radius: 4px;
+  position: absolute;
+  background-color: white;
+  font-size: 14px;
+  color: rgb(156 163 175);
+  top: 50%;
+  left: 50%;
+  padding: 1px 2px;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.c8 {
+  width: 100%;
+}
+
+.c19 {
+  box-sizing: border-box;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  border: 2px solid black;
+  border-radius: 45px;
+  padding: 3px 5px;
+  border-color: #DE5246;
+  background-color: white;
+  margin: 0px 10px;
+  cursor: pointer;
+}
+
+.c21 {
+  box-sizing: border-box;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  border: 2px solid black;
+  border-radius: 45px;
+  padding: 3px 5px;
+  border-color: #1877f2;
+  background-color: white;
+  margin: 0px 10px;
+  cursor: pointer;
+}
+
+.c22 {
+  box-sizing: border-box;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  border: 2px solid black;
+  border-radius: 45px;
+  padding: 3px 5px;
+  border-color: #0077B5;
+  background-color: white;
+  margin: 0px 10px;
+  cursor: pointer;
+}
+
+.c4 {
+  width: 100%;
+}
+
+.c2 {
+  width: 100%;
+}
+
+<div
+  className="c0"
+  data-testid="test-logintemplate-id"
+>
+  <h1
+    className="c1"
+    data-testid="logintemplate-header"
+  >
+    LOGIN
+  </h1>
+  <div
+    className="c2"
+    data-testid="logintemplate-loginform"
+  >
+    <div
+      className="c3"
+    >
+      <div
+        className="c4"
+        data-testid="loginform-textinput-login"
+      >
+        <span
+          className="c5"
+          data-testid="textinput-label"
+        >
+          Email
+        </span>
+        <input
+          className="c6"
+          data-testid="textinput-textfield"
+          id="email"
+          name="Email"
+          onChange={[Function]}
+          type="email"
+        />
+      </div>
+    </div>
+    <div
+      className="c3"
+    >
+      <div
+        className="c4"
+        data-testid="loginform-textinput-password"
+      >
+        <span
+          className="c5"
+          data-testid="textinput-label"
+        >
+          Password
+        </span>
+        <input
+          className="c6"
+          data-testid="textinput-textfield"
+          id="password"
+          name="Password"
+          onChange={[Function]}
+          type="password"
+        />
+      </div>
+    </div>
+    <div
+      className="c7"
+    >
+      <div
+        className="c8"
+        data-testid="loginform-CheckboxArea"
+      >
+        <input
+          className="c9"
+          data-testid="checkboxarea-checkbox"
+          id="remember"
+          name="remember"
+          type="checkbox"
+        />
+        <span
+          className="c5"
+          data-testid="checkboxarea-label"
+        >
+          Remember Me?
+        </span>
+      </div>
+    </div>
+    <div
+      className="c3"
+    >
+      <button
+        className="c10"
+        data-testid="login-button-id"
+        disabled={false}
+        onClick={[Function]}
+        type="submit"
+      >
+        LOGIN
+      </button>
+    </div>
+    <div
+      className="c11"
+    >
+      <button
+        className="c12"
+        color="rgb(107 114 128)"
+        data-testid="loginform-link"
+        onClick={[Function]}
+        type="button"
+      >
+        Forgot Password?
+      </button>
+    </div>
+  </div>
+  <div
+    className="c13"
+  >
+    <div
+      className="c14"
+      data-testid="logintemplate-breakline"
+    >
+      <div
+        className="c15"
+      >
+        <div
+          className="c16"
+        >
+          <p
+            className="c17"
+          >
+            OR
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c18"
+    data-testid="logintemplate-socialicons"
+  >
+    <button
+      className="c19"
+      data-testid="iconbutton-g"
+      onClick={[Function]}
+    >
+      <img
+        alt="google"
+        className="c20"
+        data-testid="icon-g"
+        height={13}
+        src="./img/google.svg"
+        width={13}
+      />
+    </button>
+    <button
+      className="c21"
+      data-testid="iconbutton-fb"
+      onClick={[Function]}
+    >
+      <img
+        alt="facebook"
+        className="c20"
+        data-testid="icon-fb"
+        height={13}
+        src="./img/facebook.svg"
+        width={13}
+      />
+    </button>
+    <button
+      className="c22"
+      data-testid="iconbutton-l"
+      onClick={[Function]}
+    >
+      <img
+        alt="linkedin"
+        className="c20"
+        data-testid="icon-l"
+        height={13}
+        src="./img/linkedin.svg"
+        width={13}
+      />
+    </button>
+  </div>
+  <div
+    className="c23"
+  >
+    <span
+      className="c24"
+      color="rgb(107 114 128)"
+    >
+      Need an account?
+       
+      <button
+        className="c25"
+        data-testid="logintemplate-link"
+        onClick={[Function]}
+        type="button"
+      >
+        SIGN UP
+      </button>
+    </span>
+  </div>
+</div>
+`;

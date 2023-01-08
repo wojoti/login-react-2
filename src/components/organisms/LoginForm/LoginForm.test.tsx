@@ -180,3 +180,67 @@ test("should handle click on checkbox", () => {
   fireEvent.click(checkboxElement);
   expect(checkboxElement).toBeChecked();
 });
+
+test("should render email textfield with red border when invalid (eg. regex)", () => {
+  render(<LoginForm {...props} />);
+  const loginformElement = screen.getByTestId("test-loginform-id");
+  expect(loginformElement).toBeInTheDocument();
+  const loginformLoginElement = screen.getByTestId("loginform-textinput-login");
+  expect(loginformLoginElement).toBeInTheDocument();
+  const textfieldLoginElement = within(loginformLoginElement).getByTestId(
+    "textinput-textfield"
+  );
+  expect(textfieldLoginElement).toBeInTheDocument();
+  userEvent.type(textfieldLoginElement, "t");
+  expect(textfieldLoginElement).toHaveStyleRule(
+    "border",
+    "2px solid rgb(244 63 94)"
+  );
+});
+
+test("should not render password textfield with red border when invalid'", () => {
+  render(<LoginForm {...props} />);
+  const loginformElement = screen.getByTestId("test-loginform-id");
+  expect(loginformElement).toBeInTheDocument();
+  const loginformLoginElement = screen.getByTestId(
+    "loginform-textinput-password"
+  );
+  expect(loginformLoginElement).toBeInTheDocument();
+  const textfieldLoginElement = within(loginformLoginElement).getByTestId(
+    "textinput-textfield"
+  );
+  expect(textfieldLoginElement).toBeInTheDocument();
+  userEvent.type(textfieldLoginElement, "t");
+  expect(textfieldLoginElement).not.toHaveStyleRule(
+    "border",
+    "2px solid rgb(244 63 94)"
+  );
+});
+test("should render checkboxarea with checkbox unchecked by default", () => {
+  render(<LoginForm {...props} />);
+  const loginformElement = screen.getByTestId("test-loginform-id");
+  expect(loginformElement).toBeInTheDocument();
+
+  const checkboxareaElement = screen.getByTestId("loginform-CheckboxArea");
+  expect(checkboxareaElement).toBeInTheDocument();
+  const checkboxareaCheckboxElement = within(checkboxareaElement).getByTestId(
+    "checkboxarea-checkbox"
+  );
+  expect(checkboxareaCheckboxElement).toBeInTheDocument();
+  expect(checkboxareaCheckboxElement).not.toBeChecked();
+});
+
+test("should switch checkbox status after click", () => {
+  render(<LoginForm {...props} />);
+  const loginformElement = screen.getByTestId("test-loginform-id");
+  expect(loginformElement).toBeInTheDocument();
+
+  const checkboxareaElement = screen.getByTestId("loginform-CheckboxArea");
+  expect(checkboxareaElement).toBeInTheDocument();
+  const checkboxareaCheckboxElement = within(checkboxareaElement).getByTestId(
+    "checkboxarea-checkbox"
+  );
+  expect(checkboxareaCheckboxElement).toBeInTheDocument();
+  fireEvent.click(checkboxareaCheckboxElement);
+  expect(checkboxareaCheckboxElement).toBeChecked();
+});

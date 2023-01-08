@@ -1,22 +1,27 @@
-import Column from "@components/atoms/Column/Column";
-import Container from "@components/atoms/Container/Container";
-import Header from "@components/atoms/Header/Header";
-import Label from "@components/atoms/Label/Label";
-import LinkB from "@components/atoms/Link/Link";
-import Row from "@components/atoms/Row/Row";
-import Breakline from "@components/molecules/Breakline/Breakline";
-import LoginForm, {
-  LoginFormHandle,
-} from "@components/organisms/LoginForm/LoginForm";
-import SocialIcons from "@components/organisms/SocialIcons/SocialIcons";
+import {
+  Column,
+  Container,
+  Header,
+  Label,
+  LinkB,
+  Row,
+} from "@components/atoms";
+import { Breakline } from "@components/molecules";
+import { LoginForm, LoginFormHandle, SocialIcons } from "@components/organisms";
 import { useEffect, useRef } from "react";
 
-type Props = {
+export interface LoginTemplateProps {
   onLoginSubmit: (email: string, password: string, rememberMe: boolean) => void;
   onIconClick: (icon: string) => void;
   onLinkClick: (path: string) => void;
-};
-function LoginTemplate({ onLoginSubmit, onIconClick, onLinkClick }: Props) {
+  testId?: string;
+}
+function LoginTemplate({
+  onLoginSubmit,
+  onIconClick,
+  onLinkClick,
+  testId,
+}: LoginTemplateProps) {
   const loginFormRef = useRef<LoginFormHandle>(null);
 
   useEffect(() => {
@@ -28,20 +33,27 @@ function LoginTemplate({ onLoginSubmit, onIconClick, onLinkClick }: Props) {
   };
 
   return (
-    <Container>
-      <Header>LOGIN</Header>
+    <Container testId={testId}>
+      <Header testId="logintemplate-header">LOGIN</Header>
       <LoginForm
         onLoginSubmit={onLoginSubmit}
         onLinkClick={onLinkClick}
         ref={loginFormRef}
+        testId="logintemplate-loginform"
       />
       <Column mt={30} mb={30}>
-        <Breakline>OR</Breakline>
+        <Breakline testId="logintemplate-breakline">OR</Breakline>
       </Column>
-      <SocialIcons onIconClick={onIconClick} />
+      <SocialIcons
+        onIconClick={onIconClick}
+        testId="logintemplate-socialicons"
+      />
       <Row justify="center" mt={28}>
         <Label color="rgb(107 114 128)">
-          Need an account? <LinkB onClick={onClick}>SIGN UP</LinkB>
+          Need an account?{" "}
+          <LinkB onClick={onClick} testId="logintemplate-link">
+            SIGN UP
+          </LinkB>
         </Label>
       </Row>
     </Container>
