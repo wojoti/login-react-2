@@ -1,6 +1,5 @@
-import Button from "@components/atoms/Button/Button";
-import Column from "@components/atoms/Column/Column";
-import TextInput from "@components/molecules/TextInput/TextInput";
+import { Button, Column } from "@components/atoms";
+import { TextInput } from "@components/molecules";
 import {
   forwardRef,
   SyntheticEvent,

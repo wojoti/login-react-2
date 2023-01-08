@@ -1,5 +1,4 @@
-import Label from "@components/atoms/Label/Label";
-import TextField from "@components/atoms/TextField/TextField";
+import { Label, TextField } from "@components/atoms";
 import { forwardRef } from "react";
 import Wrapper from "./TextInput.style";
 

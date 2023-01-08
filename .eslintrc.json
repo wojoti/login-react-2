@@ -19,6 +19,12 @@
       "rules": {
         "import/no-extraneous-dependencies": "off"
       }
+    },
+    {
+      "files": ["index.ts"],
+      "rules": {
+        "import/prefer-default-export": "off"
+      }
     }
   ],
   "parserOptions": {

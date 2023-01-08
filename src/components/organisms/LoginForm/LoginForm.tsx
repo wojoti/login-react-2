@@ -1,9 +1,5 @@
-import { Button } from "@components/atoms";
-import Column from "@components/atoms/Column/Column";
-import LinkB from "@components/atoms/Link/Link";
-import Row from "@components/atoms/Row/Row";
-import CheckboxArea from "@components/molecules/CheckboxArea/CheckboxArea";
-import TextInput from "@components/molecules/TextInput/TextInput";
+import { Button, Column, LinkB, Row } from "@components/atoms";
+import { CheckboxArea, TextInput } from "@components/molecules";
 import {
   forwardRef,
   SyntheticEvent,

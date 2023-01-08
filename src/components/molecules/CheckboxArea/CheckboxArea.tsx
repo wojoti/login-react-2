@@ -1,5 +1,4 @@
-import Checkbox from "@components/atoms/Checkbox/Checkbox";
-import Label from "@components/atoms/Label/Label";
+import { Checkbox, Label } from "@components/atoms";
 import { forwardRef } from "react";
 import Wrapper from "./CheckboxArea.style";
 

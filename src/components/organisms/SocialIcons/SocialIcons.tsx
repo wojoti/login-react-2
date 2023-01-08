@@ -1,6 +1,5 @@
-import Icon, { IconType } from "@components/atoms/Icon/Icon";
-import Row from "@components/atoms/Row/Row";
-import IconButton from "@components/molecules/IconButton/IconButton";
+import { Icon, IconType, Row } from "@components/atoms";
+import { IconButton } from "@components/molecules";
 import { useRef } from "react";
 
 export interface SocialIconsProps {
