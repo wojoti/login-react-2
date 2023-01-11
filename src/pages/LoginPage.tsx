@@ -1,9 +1,13 @@
+// eslint-disable-next-line import/order, import/extensions
+import { logIn, logOut } from "@/store/userSlice";
 import LoginTemplate from "@components/templates/LoginTemplate/LoginTemplate";
-import axios from "axios";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const onLoginSubmit = (
     email: string,
     password: string,
@@ -14,18 +18,16 @@ function LoginPage() {
       password,
       rememberMe,
     });
-    axios
-      .get("http://192.168.1.16:3001", {
-        auth: {
-          username: email,
-          password,
-        },
+    dispatch(
+      logIn({
+        email,
+        password,
       })
-      .then((response) => console.log(response.data))
-      .catch((err) => console.log(err));
+    );
   };
 
   const onIconClick = (icon: string) => {
+    dispatch(logOut());
     console.log({ icon });
   };
 

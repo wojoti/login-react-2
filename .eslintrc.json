@@ -34,6 +34,8 @@
   },
   "plugins": ["react", "prettier"],
   "rules": {
+    "import/order": "off",
+    "import/extensions": "off",
     "react/jsx-props-no-spreading": "off",
     "react/require-default-props": "off",
     "react/function-component-definition": "off",
