@@ -1,4 +1,5 @@
-import { fireEvent, render, screen, within } from "@testing-library/react";
+import renderWithProviders from "@/test-utils";
+import { fireEvent, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import TestRenderer from "react-test-renderer";
 import SignupTemplate, { SignupTemplateProps } from "./SignupTemplate";
@@ -15,14 +16,14 @@ test("should match snapshot", () => {
   expect(tree).toMatchSnapshot();
 });
 
-test("should render signuptemplate", () => {
-  render(<SignupTemplate {...props} />);
+test("should renderWithProviders signuptemplate", () => {
+  renderWithProviders(<SignupTemplate {...props} />);
   const signuptemplateElement = screen.getByTestId("test-signuptemplate-id");
   expect(signuptemplateElement).toBeInTheDocument();
 });
 
-test("should render signuptemplate default disabled button ", () => {
-  render(<SignupTemplate {...props} />);
+test("should renderWithProviders signuptemplate default disabled button ", () => {
+  renderWithProviders(<SignupTemplate {...props} />);
   const signuptemplateElement = screen.getByTestId("test-signuptemplate-id");
   expect(signuptemplateElement).toBeInTheDocument();
   const signuptemplateButtonElement = screen.getByTestId("signup-button-id");
@@ -30,8 +31,8 @@ test("should render signuptemplate default disabled button ", () => {
   expect(signuptemplateButtonElement).toBeDisabled();
 });
 
-test("should render signuptemplate with enabled button - both inputs filled, email regex correct", () => {
-  render(<SignupTemplate {...props} />);
+test("should renderWithProviders signuptemplate with enabled button - both inputs filled, email regex correct", () => {
+  renderWithProviders(<SignupTemplate {...props} />);
   const signuptemplateElement = screen.getByTestId("test-signuptemplate-id");
   expect(signuptemplateElement).toBeInTheDocument();
   const signuptemplateSignupElement = screen.getByTestId(
@@ -61,7 +62,9 @@ test("should render signuptemplate with enabled button - both inputs filled, ema
 
 test("should handle onClick on button", () => {
   const handleClick = jest.fn();
-  render(<SignupTemplate {...props} onSignupSubmit={handleClick} />);
+  renderWithProviders(
+    <SignupTemplate {...props} onSignupSubmit={handleClick} />
+  );
   const signuptemplateElement = screen.getByTestId("test-signuptemplate-id");
   expect(signuptemplateElement).toBeInTheDocument();
   const signuptemplateSignupElement = screen.getByTestId(
@@ -92,8 +95,8 @@ test("should handle onClick on button", () => {
   expect(handleClick).toHaveBeenCalledTimes(1);
 });
 
-test("should render signuptemplate with disabled button - both inputs filled, email regex incorrect", () => {
-  render(<SignupTemplate {...props} />);
+test("should renderWithProviders signuptemplate with disabled button - both inputs filled, email regex incorrect", () => {
+  renderWithProviders(<SignupTemplate {...props} />);
   const signuptemplateElement = screen.getByTestId("test-signuptemplate-id");
   expect(signuptemplateElement).toBeInTheDocument();
   const signuptemplateSignupElement = screen.getByTestId(
@@ -121,8 +124,8 @@ test("should render signuptemplate with disabled button - both inputs filled, em
   expect(signuptemplateButtonElement).toBeDisabled();
 });
 
-test("should render signuptemplate with disabled button - signup filled, email regex correct", () => {
-  render(<SignupTemplate {...props} />);
+test("should renderWithProviders signuptemplate with disabled button - signup filled, email regex correct", () => {
+  renderWithProviders(<SignupTemplate {...props} />);
   const signuptemplateElement = screen.getByTestId("test-signuptemplate-id");
   expect(signuptemplateElement).toBeInTheDocument();
   const signuptemplateSignupElement = screen.getByTestId(
@@ -140,8 +143,8 @@ test("should render signuptemplate with disabled button - signup filled, email r
   expect(signuptemplateButtonElement).toBeDisabled();
 });
 
-test("should render signuptemplate with disabled button - password filled", () => {
-  render(<SignupTemplate {...props} />);
+test("should renderWithProviders signuptemplate with disabled button - password filled", () => {
+  renderWithProviders(<SignupTemplate {...props} />);
   const signuptemplateElement = screen.getByTestId("test-signuptemplate-id");
   expect(signuptemplateElement).toBeInTheDocument();
   const signuptemplatePasswordElement = screen.getByTestId(
@@ -161,7 +164,7 @@ test("should render signuptemplate with disabled button - password filled", () =
 
 test("should handle onClick on link", () => {
   const handleClick = jest.fn();
-  render(<SignupTemplate {...props} onLinkClick={handleClick} />);
+  renderWithProviders(<SignupTemplate {...props} onLinkClick={handleClick} />);
   const signuptemplateElement = screen.getByTestId("test-signuptemplate-id");
   expect(signuptemplateElement).toBeInTheDocument();
 
@@ -172,8 +175,8 @@ test("should handle onClick on link", () => {
   expect(handleClick).toHaveBeenCalledTimes(1);
 });
 
-test("should render email textfield with red border when invalid (eg. regex)", () => {
-  render(<SignupTemplate {...props} />);
+test("should renderWithProviders email textfield with red border when invalid (eg. regex)", () => {
+  renderWithProviders(<SignupTemplate {...props} />);
   const signuptemplateElement = screen.getByTestId("test-signuptemplate-id");
   expect(signuptemplateElement).toBeInTheDocument();
   const signuptemplateSignupElement = screen.getByTestId(
@@ -191,8 +194,8 @@ test("should render email textfield with red border when invalid (eg. regex)", (
   );
 });
 
-test("should not render password textfield with red border when invalid'", () => {
-  render(<SignupTemplate {...props} />);
+test("should not renderWithProviders password textfield with red border when invalid'", () => {
+  renderWithProviders(<SignupTemplate {...props} />);
   const signuptemplateElement = screen.getByTestId("test-signuptemplate-id");
   expect(signuptemplateElement).toBeInTheDocument();
   const signuptemplateSignupElement = screen.getByTestId(
@@ -210,29 +213,29 @@ test("should not render password textfield with red border when invalid'", () =>
   );
 });
 
-test("should render header with text", () => {
-  render(<SignupTemplate {...props} />);
+test("should renderWithProviders header with text", () => {
+  renderWithProviders(<SignupTemplate {...props} />);
   const headerElement = screen.getByTestId("signuptemplate-header");
   expect(headerElement).toBeInTheDocument();
   expect(headerElement).toHaveTextContent("SIGN UP");
 });
 
-test("should render breakline with text", () => {
-  render(<SignupTemplate {...props} />);
+test("should renderWithProviders breakline with text", () => {
+  renderWithProviders(<SignupTemplate {...props} />);
   const breaklineElement = screen.getByTestId("signuptemplate-breakline");
   expect(breaklineElement).toBeInTheDocument();
   expect(breaklineElement).toHaveTextContent("OR");
 });
 
-test("should render signupform", () => {
-  render(<SignupTemplate {...props} />);
+test("should renderWithProviders signupform", () => {
+  renderWithProviders(<SignupTemplate {...props} />);
   const signupformElement = screen.getByTestId("signuptemplate-socialicons");
   expect(signupformElement).toBeInTheDocument();
 });
 
 test("should handle clicks", () => {
   const handleClick = jest.fn();
-  render(<SignupTemplate {...props} onIconClick={handleClick} />);
+  renderWithProviders(<SignupTemplate {...props} onIconClick={handleClick} />);
   const signupformElement = screen.getByTestId("signuptemplate-socialicons");
   expect(signupformElement).toBeInTheDocument();
 
@@ -254,8 +257,8 @@ test("should handle clicks", () => {
   expect(handleClick).lastCalledWith("linkedin");
 });
 
-test("should render matching link with text", () => {
-  render(<SignupTemplate {...props} />);
+test("should renderWithProviders matching link with text", () => {
+  renderWithProviders(<SignupTemplate {...props} />);
   const linkElement = screen.getByTestId("signuptemplate-link");
   expect(linkElement).toBeInTheDocument();
   expect(linkElement).toHaveTextContent("LOGIN");
@@ -263,7 +266,7 @@ test("should render matching link with text", () => {
 
 test("should handle onClick event", () => {
   const handleClick = jest.fn();
-  render(<SignupTemplate {...props} onLinkClick={handleClick} />);
+  renderWithProviders(<SignupTemplate {...props} onLinkClick={handleClick} />);
   const linkElement = screen.getByTestId("signuptemplate-link");
   fireEvent.click(linkElement);
   expect(handleClick).toHaveBeenCalledTimes(1);

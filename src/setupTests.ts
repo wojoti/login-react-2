@@ -5,7 +5,10 @@
 import "@testing-library/jest-dom";
 import { cleanup } from "@testing-library/react";
 import "jest-styled-components";
+import { store } from "./store/store";
+import { resetState } from "./store/userSlice";
 
 afterEach(() => {
   cleanup();
+  store.dispatch(resetState());
 });

@@ -1,5 +1,9 @@
-import { fireEvent, render, screen, within } from "@testing-library/react";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { store } from "@/store/store";
+import renderWithProviders from "@/test-utils";
+import { fireEvent, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { Provider } from "react-redux";
 import TestRenderer from "react-test-renderer";
 import LoginTemplate, { LoginTemplateProps } from "./LoginTemplate";
 
@@ -11,18 +15,23 @@ const props: LoginTemplateProps = {
 };
 
 test("should match snapshot", () => {
-  const tree = TestRenderer.create(<LoginTemplate {...props} />).toJSON();
+  const tree = TestRenderer.create(
+    <Provider store={store}>
+      <LoginTemplate {...props} />
+    </Provider>
+  ).toJSON();
+  // const tree = renderWithProviders(<LoginTemplate {...props} />);
   expect(tree).toMatchSnapshot();
 });
 
 test("should render logintemplate", () => {
-  render(<LoginTemplate {...props} />);
+  renderWithProviders(<LoginTemplate {...props} />);
   const logintemplateElement = screen.getByTestId("test-logintemplate-id");
   expect(logintemplateElement).toBeInTheDocument();
 });
 
 test("should render logintemplate default disabled button ", () => {
-  render(<LoginTemplate {...props} />);
+  renderWithProviders(<LoginTemplate {...props} />);
   const logintemplateElement = screen.getByTestId("test-logintemplate-id");
   expect(logintemplateElement).toBeInTheDocument();
   const logintemplateButtonElement = screen.getByTestId("login-button-id");
@@ -31,7 +40,7 @@ test("should render logintemplate default disabled button ", () => {
 });
 
 test("should render logintemplate with enabled button - both inputs filled, email regex correct", () => {
-  render(<LoginTemplate {...props} />);
+  renderWithProviders(<LoginTemplate {...props} />);
   const logintemplateElement = screen.getByTestId("test-logintemplate-id");
   expect(logintemplateElement).toBeInTheDocument();
   const logintemplateLoginElement = screen.getByTestId(
@@ -42,7 +51,7 @@ test("should render logintemplate with enabled button - both inputs filled, emai
     "textinput-textfield"
   );
   expect(textfieldLoginElement).toBeInTheDocument();
-  userEvent.type(textfieldLoginElement, "test@test.eu");
+  userEvent.type(textfieldLoginElement, "test@test.pl");
 
   const logintemplatePasswordElement = screen.getByTestId(
     "loginform-textinput-password"
@@ -52,7 +61,7 @@ test("should render logintemplate with enabled button - both inputs filled, emai
     logintemplatePasswordElement
   ).getByTestId("textinput-textfield");
   expect(textfieldPasswordElement).toBeInTheDocument();
-  userEvent.type(textfieldPasswordElement, "pwd");
+  userEvent.type(textfieldPasswordElement, "test");
 
   const logintemplateButtonElement = screen.getByTestId("login-button-id");
   expect(logintemplateButtonElement).toBeInTheDocument();
@@ -61,7 +70,7 @@ test("should render logintemplate with enabled button - both inputs filled, emai
 
 test("should handle onClick on button", () => {
   const handleClick = jest.fn();
-  render(<LoginTemplate {...props} onLoginSubmit={handleClick} />);
+  renderWithProviders(<LoginTemplate {...props} onLoginSubmit={handleClick} />);
   const logintemplateElement = screen.getByTestId("test-logintemplate-id");
   expect(logintemplateElement).toBeInTheDocument();
   const logintemplateLoginElement = screen.getByTestId(
@@ -72,7 +81,7 @@ test("should handle onClick on button", () => {
     "textinput-textfield"
   );
   expect(textfieldLoginElement).toBeInTheDocument();
-  userEvent.type(textfieldLoginElement, "test@test.eu");
+  userEvent.type(textfieldLoginElement, "test@test.pl");
 
   const logintemplatePasswordElement = screen.getByTestId(
     "loginform-textinput-password"
@@ -82,7 +91,7 @@ test("should handle onClick on button", () => {
     logintemplatePasswordElement
   ).getByTestId("textinput-textfield");
   expect(textfieldPasswordElement).toBeInTheDocument();
-  userEvent.type(textfieldPasswordElement, "pwd");
+  userEvent.type(textfieldPasswordElement, "test");
 
   const logintemplateButtonElement = screen.getByTestId("login-button-id");
   expect(logintemplateButtonElement).toBeInTheDocument();
@@ -93,7 +102,7 @@ test("should handle onClick on button", () => {
 });
 
 test("should render logintemplate with disabled button - both inputs filled, email regex incorrect", () => {
-  render(<LoginTemplate {...props} />);
+  renderWithProviders(<LoginTemplate {...props} />);
   const logintemplateElement = screen.getByTestId("test-logintemplate-id");
   expect(logintemplateElement).toBeInTheDocument();
   const logintemplateLoginElement = screen.getByTestId(
@@ -122,7 +131,7 @@ test("should render logintemplate with disabled button - both inputs filled, ema
 });
 
 test("should render logintemplate with disabled button - login filled, email regex correct", () => {
-  render(<LoginTemplate {...props} />);
+  renderWithProviders(<LoginTemplate {...props} />);
   const logintemplateElement = screen.getByTestId("test-logintemplate-id");
   expect(logintemplateElement).toBeInTheDocument();
   const logintemplateLoginElement = screen.getByTestId(
@@ -141,7 +150,7 @@ test("should render logintemplate with disabled button - login filled, email reg
 });
 
 test("should render logintemplate with disabled button - password filled", () => {
-  render(<LoginTemplate {...props} />);
+  renderWithProviders(<LoginTemplate {...props} />);
   const logintemplateElement = screen.getByTestId("test-logintemplate-id");
   expect(logintemplateElement).toBeInTheDocument();
   const logintemplatePasswordElement = screen.getByTestId(
@@ -161,7 +170,7 @@ test("should render logintemplate with disabled button - password filled", () =>
 
 test("should handle onClick on link", () => {
   const handleClick = jest.fn();
-  render(<LoginTemplate {...props} onLinkClick={handleClick} />);
+  renderWithProviders(<LoginTemplate {...props} onLinkClick={handleClick} />);
   const logintemplateElement = screen.getByTestId("test-logintemplate-id");
   expect(logintemplateElement).toBeInTheDocument();
 
@@ -173,7 +182,7 @@ test("should handle onClick on link", () => {
 });
 
 test("should handle click on checkbox", () => {
-  render(<LoginTemplate {...props} />);
+  renderWithProviders(<LoginTemplate {...props} />);
   const logintemplateElement = screen.getByTestId("test-logintemplate-id");
   expect(logintemplateElement).toBeInTheDocument();
 
@@ -191,7 +200,7 @@ test("should handle click on checkbox", () => {
 });
 
 test("should render email textfield with red border when invalid (eg. regex)", () => {
-  render(<LoginTemplate {...props} />);
+  renderWithProviders(<LoginTemplate {...props} />);
   const logintemplateElement = screen.getByTestId("test-logintemplate-id");
   expect(logintemplateElement).toBeInTheDocument();
   const logintemplateLoginElement = screen.getByTestId(
@@ -210,7 +219,7 @@ test("should render email textfield with red border when invalid (eg. regex)", (
 });
 
 test("should not render password textfield with red border when invalid'", () => {
-  render(<LoginTemplate {...props} />);
+  renderWithProviders(<LoginTemplate {...props} />);
   const logintemplateElement = screen.getByTestId("test-logintemplate-id");
   expect(logintemplateElement).toBeInTheDocument();
   const logintemplateLoginElement = screen.getByTestId(
@@ -228,7 +237,7 @@ test("should not render password textfield with red border when invalid'", () =>
   );
 });
 test("should render checkboxarea with checkbox unchecked by default", () => {
-  render(<LoginTemplate {...props} />);
+  renderWithProviders(<LoginTemplate {...props} />);
   const logintemplateElement = screen.getByTestId("test-logintemplate-id");
   expect(logintemplateElement).toBeInTheDocument();
 
@@ -242,7 +251,7 @@ test("should render checkboxarea with checkbox unchecked by default", () => {
 });
 
 test("should switch checkbox status after click", () => {
-  render(<LoginTemplate {...props} />);
+  renderWithProviders(<LoginTemplate {...props} />);
   const logintemplateElement = screen.getByTestId("test-logintemplate-id");
   expect(logintemplateElement).toBeInTheDocument();
 
@@ -257,28 +266,28 @@ test("should switch checkbox status after click", () => {
 });
 
 test("should render header with text", () => {
-  render(<LoginTemplate {...props} />);
+  renderWithProviders(<LoginTemplate {...props} />);
   const headerElement = screen.getByTestId("logintemplate-header");
   expect(headerElement).toBeInTheDocument();
   expect(headerElement).toHaveTextContent("LOGIN");
 });
 
 test("should render breakline with text", () => {
-  render(<LoginTemplate {...props} />);
+  renderWithProviders(<LoginTemplate {...props} />);
   const breaklineElement = screen.getByTestId("logintemplate-breakline");
   expect(breaklineElement).toBeInTheDocument();
   expect(breaklineElement).toHaveTextContent("OR");
 });
 
 test("should render signupform", () => {
-  render(<LoginTemplate {...props} />);
+  renderWithProviders(<LoginTemplate {...props} />);
   const signupformElement = screen.getByTestId("logintemplate-socialicons");
   expect(signupformElement).toBeInTheDocument();
 });
 
 test("should handle clicks", () => {
   const handleClick = jest.fn();
-  render(<LoginTemplate {...props} onIconClick={handleClick} />);
+  renderWithProviders(<LoginTemplate {...props} onIconClick={handleClick} />);
   const signupformElement = screen.getByTestId("logintemplate-socialicons");
   expect(signupformElement).toBeInTheDocument();
 
@@ -301,7 +310,7 @@ test("should handle clicks", () => {
 });
 
 test("should render matching link with text", () => {
-  render(<LoginTemplate {...props} />);
+  renderWithProviders(<LoginTemplate {...props} />);
   const linkElement = screen.getByTestId("logintemplate-link");
   expect(linkElement).toBeInTheDocument();
   expect(linkElement).toHaveTextContent("SIGN UP");
@@ -309,7 +318,7 @@ test("should render matching link with text", () => {
 
 test("should handle onClick event", () => {
   const handleClick = jest.fn();
-  render(<LoginTemplate {...props} onLinkClick={handleClick} />);
+  renderWithProviders(<LoginTemplate {...props} onLinkClick={handleClick} />);
   const linkElement = screen.getByTestId("logintemplate-link");
   fireEvent.click(linkElement);
   expect(handleClick).toHaveBeenCalledTimes(1);

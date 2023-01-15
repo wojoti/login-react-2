@@ -57,6 +57,7 @@
   },
   "jest": {
     "moduleNameMapper": {
+      "axios": "axios/dist/node/axios.cjs",
       "@components/(.*)": [
         "<rootDir>/src/components/$1"
       ],

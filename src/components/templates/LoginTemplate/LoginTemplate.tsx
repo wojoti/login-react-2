@@ -25,7 +25,6 @@ function LoginTemplate({
   testId,
 }: LoginTemplateProps) {
   const loginFormRef = useRef<LoginFormHandle>(null);
-
   const user = useSelector((state: RootState) => state.user);
 
   useEffect(() => {
@@ -61,7 +60,7 @@ function LoginTemplate({
         </Label>
       </Row>
       {user.success ? (
-        <div>
+        <div data-testid="redux-test-div">
           <span>{JSON.stringify(user)}</span>
         </div>
       ) : null}

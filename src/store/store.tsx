@@ -1,9 +1,10 @@
+/* eslint-disable import/no-cycle */
 import { configureStore } from "@reduxjs/toolkit";
-import userReducer from "./userSlice";
+import { userSlice } from "./userSlice";
 
 export const store = configureStore({
   reducer: {
-    user: userReducer,
+    user: userSlice.reducer,
   },
 });
 
