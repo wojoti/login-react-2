@@ -1,7 +1,11 @@
-import SignupTemplate from "@components/templates/SignupTemplate/SignupTemplate";
+import { SignupTemplate } from "@components/templates";
 import { useNavigate } from "react-router-dom";
 
-function SignupPage() {
+export interface SignupPageProps {
+  testId?: string;
+}
+
+function SignupPage({ testId }: SignupPageProps) {
   const navigate = useNavigate();
   const onSignupSubmit = (email: string, password: string) => {
     console.log({
@@ -20,6 +24,7 @@ function SignupPage() {
       onSignupSubmit={onSignupSubmit}
       onIconClick={onIconClick}
       onLinkClick={onLinkClick}
+      testId={testId}
     />
   );
 }

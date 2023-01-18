@@ -1,4 +1,4 @@
-import { RootState } from "@/store/store";
+import { UserState } from "@/store/userSlice";
 import {
   Column,
   Container,
@@ -10,22 +10,22 @@ import {
 import { Breakline } from "@components/molecules";
 import { LoginForm, LoginFormHandle, SocialIcons } from "@components/organisms";
 import { useEffect, useRef } from "react";
-import { useSelector } from "react-redux";
 
 export interface LoginTemplateProps {
   onLoginSubmit: (email: string, password: string, rememberMe: boolean) => void;
   onIconClick: (icon: string) => void;
   onLinkClick: (path: string) => void;
   testId?: string;
+  userData: UserState;
 }
 function LoginTemplate({
   onLoginSubmit,
   onIconClick,
   onLinkClick,
   testId,
+  userData,
 }: LoginTemplateProps) {
   const loginFormRef = useRef<LoginFormHandle>(null);
-  const user = useSelector((state: RootState) => state.user);
 
   useEffect(() => {
     loginFormRef.current!.focus();
@@ -59,10 +59,12 @@ function LoginTemplate({
           </LinkB>
         </Label>
       </Row>
-      {user.success ? (
-        <div data-testid="redux-test-div">
-          <span>{JSON.stringify(user)}</span>
-        </div>
+      {userData.success ? (
+        <Row justify="center">
+          <Label testId="logintemplate-userdata">
+            {JSON.stringify(userData)}
+          </Label>
+        </Row>
       ) : null}
     </Container>
   );

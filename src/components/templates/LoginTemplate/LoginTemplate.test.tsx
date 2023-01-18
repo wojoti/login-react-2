@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { store } from "@/store/store";
 import renderWithProviders from "@/test-utils";
 import { fireEvent, screen, within } from "@testing-library/react";
@@ -12,6 +11,12 @@ const props: LoginTemplateProps = {
   onIconClick: () => {},
   onLinkClick: () => {},
   testId: "test-logintemplate-id",
+  userData: {
+    success: false,
+    name: "",
+    role: "",
+    status: "",
+  },
 };
 
 test("should match snapshot", () => {

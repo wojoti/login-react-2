@@ -1,14 +1,17 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-// eslint-disable-next-line import/order, import/extensions
-import { AppDispatch } from "@/store/store";
+import { AppDispatch, RootState } from "@/store/store";
 import { fetchUserData } from "@/store/userSlice";
-import LoginTemplate from "@components/templates/LoginTemplate/LoginTemplate";
-import { useDispatch } from "react-redux";
+import { LoginTemplate } from "@components/templates";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-function LoginPage() {
+export interface LoginPageProps {
+  testId?: string;
+}
+
+function LoginPage({ testId }: LoginPageProps) {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
+  const user = useSelector((state: RootState) => state.user);
   const onLoginSubmit = (
     email: string,
     password: string,
@@ -35,6 +38,8 @@ function LoginPage() {
       onLoginSubmit={onLoginSubmit}
       onIconClick={onIconClick}
       onLinkClick={onLinkClick}
+      userData={user}
+      testId={testId}
     />
   );
 }
